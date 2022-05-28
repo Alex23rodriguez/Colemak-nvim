@@ -9,3 +9,8 @@ if not status_ok then
   vim.notify("colorscheme " .. colorscheme .. " not found!")
   return
 end
+
+-- default select color for everblush is not very visible
+if colorscheme=="everblush" then
+  vim.cmd "hi Visual guibg=DarkSlateGray"
+end

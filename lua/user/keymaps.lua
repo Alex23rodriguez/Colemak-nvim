@@ -41,7 +41,7 @@ keymap("n", "<CR>", "i", opts)
 
 -- Move current line ala vscode
 keymap("n", "<A-u>", ":m .-2<CR>==", opts)
-keymap("n", "<A-E>", ":m .+1<CR>==", opts)
+keymap("n", "<A-e>", ":m .+1<CR>==", opts)
 
 -- better jump hist at Querty's U and O
 keymap("n", "L", "<C-o>", opts)
@@ -74,7 +74,7 @@ keymap("n", "[q", ":cprev<CR>", opts)
 -- Insert --
 -- Move current line ala vscode
 keymap("i", "<A-u>", "<Esc>:m .-2<CR>==gi", opts)
-keymap("i", "<A-E>", "<Esc>:m .+1<CR>==gi", opts)
+keymap("i", "<A-e>", "<Esc>:m .+1<CR>==gi", opts)
 -- Press jk fast to exit insert mode
 keymap("i", "kk", "<ESC>", opts)
 
@@ -84,17 +84,12 @@ keymap("v", "i", "l", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 -- when pasting over something, don't override register
 keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
--- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
--- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-E>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-e>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-u>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --

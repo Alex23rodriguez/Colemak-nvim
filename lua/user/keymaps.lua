@@ -99,6 +99,16 @@ keymap("x", "<A-u>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Telescope commands
+-- view more here: https://github.com/nvim-telescope/telescope.nvim
+-- maybe useful: help_tags, treesitter, lsp_definitions, symbols
 keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>p", "<cmd>Telescope oldfiles<cr>", opts)
 -- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "gr", "<cmd>Telescope lsp_references theme=ivy<cr>", opts)
+keymap("n", "<leader>'", "<cmd>Telescope marks theme=ivy<cr>", opts)
+keymap("n", "<leader>y", "<cmd>Telescope registers theme=ivy<cr>", opts)
+keymap("n", "<leader>[", "<cmd>Telescope diagnostics theme=ivy<cr>", opts)
+keymap("n", "<leader>T", "<cmd>Telescope builtin theme=ivy<cr>", opts)
+-- keymap("n", "<leader>h", "<cmd>Telescope help_tags<cr>", opts)

@@ -38,16 +38,13 @@ packer.init {
   },
 }
 
--- Install your plugins here
+----------- Install your plugins here -----------
 return packer.startup(function(use)
   -- My plugins here
+  -- core
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-
-  -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -56,6 +53,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -68,6 +66,28 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use 'nvim-telescope/telescope-media-files.nvim'
+  
+  -- Colorschemes
+  use "lunarvim/colorschemes"
+  use "mangeshrex/everblush.vim" 
+  use "folke/tokyonight.nvim"
+  
+  --[[ Lazy Loading
+
+  -- Load on specific commands
+  use {'my/plugin', opt = true, cmd = {'Make', 'Focus'}
+
+  
+  -- Load on a combination of conditions: specific filetypes or commands
+  use {
+    'my/plugin',
+    ft = {'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown', 'racket', 'vim', 'tex'},
+  }
+
+  -- Plugins can have post-install/update hooks
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+
+  --]]
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

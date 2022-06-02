@@ -83,9 +83,6 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
-
-  -- Git
-  use "lewis6991/gitsigns.nvim"
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
   use 'JoosepAlviste/nvim-ts-context-commentstring'
@@ -109,6 +106,28 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+
+  -- Git
+  use "lewis6991/gitsigns.nvim"
+  use 'sindrets/diffview.nvim'
+
+  --[[ Lazy Loading
+
+  -- Load on specific commands
+  use {'my/plugin', opt = true, cmd = {'Make', 'Focus'}
+
+
+  -- Load on a combination of conditions: specific filetypes or commands
+  use {
+    'my/plugin',
+    ft = {'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown', 'racket', 'vim', 'tex'},
+  }
+
+  -- Plugins can have post-install/update hooks
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+
+  --]]
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

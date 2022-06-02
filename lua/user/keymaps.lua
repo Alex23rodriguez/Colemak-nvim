@@ -71,6 +71,48 @@ keymap("n", "sh", "<cmd>split<cr>", opts)
 keymap("n", "sI", "<C-w>x", opts)
 keymap("n", "sr", "<C-w>r", opts)
 
+keymap("", "E", "5j", opts)
+keymap("", "U", "5k", opts)
+
+keymap("", "S", "z", opts)
+
+-- remap shift-enter to enter empty line. Need to modify terminal behavior: https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
+keymap("n", "<S-CR>", "o<esc>", opts)
+
+-- Normal --
+-- Colemak settings
+keymap("n", "i", "l", opts)
+-- remap undo and redo to z and Z
+keymap("n", "z", "u", opts)
+keymap("n", "Z", "<C-r>", opts)
+
+-- remap enter to insert
+keymap("n", "<CR>", "i", opts)
+
+-- Move current line ala vscode
+keymap("n", "<A-u>", ":m .-2<CR>==", opts)
+keymap("n", "<A-e>", ":m .+1<CR>==", opts)
+
+-- better jump hist at Querty's U and O
+keymap("n", "L", "<C-o>", opts)
+keymap("n", "Y", "<C-i>", opts)
+
+
+-- Better window navigation
+keymap("n", "s", "<Nop>", opts)
+
+keymap("n", "sn", "<C-w>h", opts)
+keymap("n", "se", "<C-w>j", opts)
+keymap("n", "su", "<C-w>k", opts)
+keymap("n", "si", "<C-w>l", opts)
+
+keymap("n", "sv", "<cmd>vsplit<cr>", opts)
+keymap("n", "sh", "<cmd>split<cr>", opts)
+
+
+keymap("n", "sI", "<C-w>x", opts)
+keymap("n", "sr", "<C-w>r", opts)
+
 -- Resize with arrows
 -- keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 -- keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -117,6 +159,7 @@ keymap("x", "<A-u>", ":move '<-2<CR>gv-gv", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
 -- Telescope commands
 -- view more here: https://github.com/nvim-telescope/telescope.nvim
 -- maybe useful: help_tags, treesitter, lsp_definitions, symbols

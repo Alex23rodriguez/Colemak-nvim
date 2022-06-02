@@ -49,10 +49,19 @@ keymap("n", "Y", "<C-i>", opts)
 
 
 -- Better window navigation
--- keymap("n", "<C-h>", "<C-w>h", opts)
--- keymap("n", "<C-j>", "<C-w>j", opts)
--- keymap("n", "<C-k>", "<C-w>k", opts)
--- keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "s", "<Nop>", opts)
+
+keymap("n", "sn", "<C-w>h", opts)
+keymap("n", "se", "<C-w>j", opts)
+keymap("n", "su", "<C-w>k", opts)
+keymap("n", "si", "<C-w>l", opts)
+
+keymap("n", "sv", "<cmd>vsplit<cr>", opts)
+keymap("n", "sh", "<cmd>split<cr>", opts)
+
+
+keymap("n", "sI", "<C-w>x", opts)
+keymap("n", "sr", "<C-w>r", opts)
 
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 

@@ -32,11 +32,19 @@ keymap("", "K", "N", opts)
 keymap("", "E", "5j", opts)
 keymap("", "U", "5k", opts)
 
+keymap("", "S", "z", opts)
+
+-- remap shift-enter to enter empty line. Need to modify terminal behavior: https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
+keymap("n", "<S-CR>", "o<esc>", opts)
+
 -- Normal --
 -- Colemak settings
 keymap("n", "i", "l", opts)
+-- remap undo and redo to z and Z
 keymap("n", "z", "u", opts)
 keymap("n", "Z", "<C-r>", opts)
+
+-- remap enter to insert
 keymap("n", "<CR>", "i", opts)
 
 -- Move current line ala vscode
@@ -84,8 +92,9 @@ keymap("n", "[q", ":cprev<CR>", opts)
 -- Move current line ala vscode
 keymap("i", "<A-u>", "<Esc>:m .-2<CR>==gi", opts)
 keymap("i", "<A-e>", "<Esc>:m .+1<CR>==gi", opts)
--- Press jk fast to exit insert mode
+-- Press kk fast to exit insert mode
 keymap("i", "kk", "<ESC>", opts)
+keymap("i", "<S-CR>", "<C-o>o", opts)
 
 -- Visual --
 keymap("v", "i", "l", opts)
@@ -119,5 +128,5 @@ keymap("n", "gr", "<cmd>Telescope lsp_references theme=ivy<cr>", opts)
 keymap("n", "<leader>'", "<cmd>Telescope marks theme=ivy<cr>", opts)
 keymap("n", "<leader>y", "<cmd>Telescope registers theme=ivy<cr>", opts)
 keymap("n", "<leader>[", "<cmd>Telescope diagnostics theme=ivy<cr>", opts)
-keymap("n", "<leader>T", "<cmd>lua require'telescope.builtin'.builtin(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<leader>t", "<cmd>lua require'telescope.builtin'.builtin(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 -- keymap("n", "<leader>h", "<cmd>Telescope help_tags<cr>", opts)

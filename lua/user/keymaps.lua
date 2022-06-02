@@ -59,10 +59,10 @@ keymap("n", "Y", "<C-i>", opts)
 -- Better window navigation
 keymap("n", "s", "<Nop>", opts)
 
-keymap("n", "sn", "<C-w>h", opts)
-keymap("n", "se", "<C-w>j", opts)
-keymap("n", "su", "<C-w>k", opts)
-keymap("n", "si", "<C-w>l", opts)
+keymap("", "sn", "<C-w>h", opts)
+keymap("", "se", "<C-w>j", opts)
+keymap("", "su", "<C-w>k", opts)
+keymap("", "si", "<C-w>l", opts)
 
 keymap("n", "sv", "<cmd>vsplit<cr>", opts)
 keymap("n", "sh", "<cmd>split<cr>", opts)

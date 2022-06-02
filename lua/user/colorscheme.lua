@@ -2,7 +2,7 @@
 -- disable background for transparency, even when changing color schemes
 vim.cmd "au ColorScheme * hi Normal ctermbg=none guibg=none"
 
-local colorscheme = "onedarker"
+local colorscheme = "tokyonight"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
@@ -16,8 +16,15 @@ if colorscheme=="everblush" then
   vim.cmd "hi Visual guibg=DarkSlateGray"
 end
 
--- change GitSigns colors
-local status_ok, gitsigns = pcall(require, "gitsigns")
+-- change Diffview colors
+--[[
+local status_ok, diffview  = pcall(require, "diffview")
 if not status_ok then
-  return
+  print("colorscheme: diffview not found")
+else
+  vim.cmd "hi DiffAdd ctermbg=4 guibg=#283B4D"
+  vim.cmd "hi DiffText cterm=bold ctermbg=9 guibg=#394b70"
+  vim.cmd "hi DiffChange ctermbg=5 gui=underline guifg=171B21 guibg=#94151b"
+  vim.cmd "hi DiffDelete ctermfg=12 ctermbg=6 gui=bold guifg=171B21 guibg=#94151b"
 end
+]]

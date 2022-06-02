@@ -81,12 +81,14 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
-
-  -- Git
-  use "lewis6991/gitsigns.nvim"
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+
+  -- Git
+  use "lewis6991/gitsigns.nvim"
+  use 'sindrets/diffview.nvim'
+
   --[[ Lazy Loading
 
   -- Load on specific commands

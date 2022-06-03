@@ -1,3 +1,5 @@
+-- https://github.com/lewis6991/gitsigns.nvim
+
 local status_ok, gitsigns = pcall(require, "gitsigns")
 if not status_ok then
   return
@@ -46,3 +48,5 @@ gitsigns.setup {
     enable = false,
   },
 }
+
+-- useful commands: diffthis, next_hunk, prev_hunk

@@ -90,6 +90,7 @@ return packer.startup(function(use)
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- Git
+  use "TimUntersberger/neogit"
   use "lewis6991/gitsigns.nvim"
   use 'sindrets/diffview.nvim'
 

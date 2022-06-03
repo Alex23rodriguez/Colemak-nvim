@@ -112,6 +112,9 @@ keymap("n", "sh", "<cmd>split<cr>", opts)
 
 keymap("n", "sI", "<C-w>x", opts)
 keymap("n", "sr", "<C-w>r", opts)
+-- Navigate buffers
+keymap("n", "l", ":bnext<CR>", opts)
+keymap("n", "sl", ":bprev<CR>", opts)
 
 -- Resize with arrows
 -- keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -119,9 +122,6 @@ keymap("n", "sr", "<C-w>r", opts)
 -- keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 -- keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Navigate buffers
-keymap("n", "l", ":bnext<CR>", opts)
--- keymap("n", "L", ":bprevious<CR>", opts) -- TODO find good mapping for this
 
 -- QuickFix
 keymap("n", "]q", ":cnext<CR>", opts)

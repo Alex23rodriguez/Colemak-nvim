@@ -157,13 +157,17 @@ keymap("x", "<A-u>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- leader keymaps
+-- format
+keymap("n", "<leader>f", ":Format<cr>", opts)
+
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Telescope commands
 -- view more here: https://github.com/nvim-telescope/telescope.nvim
 -- maybe useful: help_tags, treesitter, lsp_definitions, symbols
-keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>F", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>p", "<cmd>Telescope oldfiles<cr>", opts)
 -- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)

@@ -55,7 +55,6 @@ keymap("n", "<A-e>", ":m .+1<CR>==", opts)
 keymap("n", "L", "<C-o>", opts)
 keymap("n", "Y", "<C-i>", opts)
 
-
 -- Better window navigation
 keymap("n", "s", "<Nop>", opts)
 
@@ -66,7 +65,6 @@ keymap("", "si", "<C-w>l", opts)
 
 keymap("n", "sv", "<cmd>vsplit<cr>", opts)
 keymap("n", "sh", "<cmd>split<cr>", opts)
-
 
 keymap("n", "sI", "<C-w>x", opts)
 keymap("n", "sr", "<C-w>r", opts)
@@ -97,7 +95,6 @@ keymap("n", "<A-e>", ":m .+1<CR>==", opts)
 keymap("n", "L", "<C-o>", opts)
 keymap("n", "Y", "<C-i>", opts)
 
-
 -- Better window navigation
 keymap("n", "s", "<Nop>", opts)
 
@@ -108,7 +105,6 @@ keymap("n", "si", "<C-w>l", opts)
 
 keymap("n", "sv", "<cmd>vsplit<cr>", opts)
 keymap("n", "sh", "<cmd>split<cr>", opts)
-
 
 keymap("n", "sI", "<C-w>x", opts)
 keymap("n", "sr", "<C-w>r", opts)
@@ -121,7 +117,6 @@ keymap("n", "sl", ":bprev<CR>", opts)
 -- keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 -- keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 -- keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-
 
 -- QuickFix
 keymap("n", "]q", ":cnext<CR>", opts)
@@ -175,5 +170,10 @@ keymap("n", "gr", "<cmd>Telescope lsp_references theme=ivy<cr>", opts)
 keymap("n", "<leader>'", "<cmd>Telescope marks theme=ivy<cr>", opts)
 keymap("n", "<leader>y", "<cmd>Telescope registers theme=ivy<cr>", opts)
 keymap("n", "<leader>[", "<cmd>Telescope diagnostics theme=ivy<cr>", opts)
-keymap("n", "<leader>t", "<cmd>lua require'telescope.builtin'.builtin(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap(
+  "n",
+  "<leader>t",
+  "<cmd>lua require'telescope.builtin'.builtin(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  opts
+)
 -- keymap("n", "<leader>h", "<cmd>Telescope help_tags<cr>", opts)

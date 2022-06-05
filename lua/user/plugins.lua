@@ -55,6 +55,7 @@ return packer.startup(function(use)
   use("moll/vim-bbye")
   use("nvim-lualine/lualine.nvim")
   use("akinsho/toggleterm.nvim")
+  use("lukas-reineke/indent-blankline.nvim")
 
   -- motion
   use("jeetsukumaran/vim-indentwise")

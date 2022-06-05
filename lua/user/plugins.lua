@@ -106,6 +106,7 @@ return packer.startup(function(use)
   use("TimUntersberger/neogit")
   use("lewis6991/gitsigns.nvim")
   use("sindrets/diffview.nvim")
+  use("ruifm/gitlinker.nvim")
 
   --[[ Lazy Loading
 

@@ -6,6 +6,12 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
     enable = true,
     ignore = false,
   },
+  respect_buf_cwd = true,
+  update_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
+  },
   view = {
     width = 30,
     height = 30,
@@ -71,7 +77,7 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
     },
   },
   trash = {
-    cmd = "!echo hello",
+    cmd = "!echo 'trash unavailable'",
     require_confirm = true,
   },
   renderer = {

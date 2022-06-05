@@ -32,15 +32,9 @@ keymap("", "U", "5k", opts)
 
 keymap("", "S", "z", opts)
 
--- remap shift-enter to enter empty line. Need to modify terminal behavior: https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
-keymap("n", "<S-CR>", "o<esc>", opts)
-
 -- Normal --
 -- Colemak settings
 keymap("n", "i", "l", opts)
--- remap undo and redo to z and Z
-keymap("n", "z", "u", opts)
-keymap("n", "Z", "<C-r>", opts)
 
 -- remap enter to insert
 keymap("n", "<CR>", "i", opts)
@@ -52,6 +46,13 @@ keymap("n", "<A-e>", ":m .+1<CR>==", opts)
 -- better jump hist at Querty's U and O
 keymap("n", "L", "<C-o>", opts)
 keymap("n", "Y", "<C-i>", opts)
+
+-- remap undo and redo to z and Z
+keymap("n", "z", "u", opts)
+keymap("n", "Z", "<C-r>", opts)
+
+-- remap shift-enter to enter empty line. Need to modify terminal behavior: https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
+keymap("n", "<S-CR>", "o<esc>", opts)
 
 -- Better window navigation
 keymap("n", "s", "<Nop>", opts)
@@ -71,6 +72,8 @@ keymap("", "E", "5j", opts)
 keymap("", "U", "5k", opts)
 
 keymap("", "S", "z", opts)
+keymap("n", "<c-w>", "<cmd>Bdelete<cr>", opts)
+keymap("n", "gA", "<cmd>Alpha<cr>", opts)
 
 -- remap shift-enter to enter empty line. Need to modify terminal behavior: https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
 keymap("n", "<S-CR>", "o<esc>", opts)
@@ -78,9 +81,6 @@ keymap("n", "<S-CR>", "o<esc>", opts)
 -- Normal --
 -- Colemak settings
 keymap("n", "i", "l", opts)
--- remap undo and redo to z and Z
-keymap("n", "z", "u", opts)
-keymap("n", "Z", "<C-r>", opts)
 
 -- remap enter to insert
 keymap("n", "<CR>", "i", opts)

@@ -59,6 +59,7 @@ return packer.startup(function(use)
 
   -- motion
   use("jeetsukumaran/vim-indentwise")
+  use("unblevable/quick-scope")
 
   -- cmp plugins
   use("hrsh7th/nvim-cmp") -- The completion plugin

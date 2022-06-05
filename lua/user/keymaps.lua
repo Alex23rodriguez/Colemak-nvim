@@ -1,7 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -111,6 +109,9 @@ keymap("n", "sr", "<C-w>r", opts)
 -- Navigate buffers
 keymap("n", "l", ":bnext<CR>", opts)
 keymap("n", "sl", ":bprev<CR>", opts)
+
+-- misc
+keymap("n", "gs", "<cmd>source %<cr><cmd>echo 'file sourced!'<cr>", opts)
 
 -- Resize with arrows
 -- keymap("n", "<C-Up>", ":resize +2<CR>", opts)

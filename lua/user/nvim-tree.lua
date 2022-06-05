@@ -1,10 +1,10 @@
 -- setup with all defaults
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 -- nested options are documented by accessing them with `.` (eg: `:help nvim-tree.view.mappings.list`).
-require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
+require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
   git = {
     enable = true,
-    ignore = false
+    ignore = false,
   },
   view = {
     width = 30,
@@ -72,12 +72,12 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
   },
   trash = {
     cmd = "!echo hello",
-    require_confirm = true
+    require_confirm = true,
   },
   renderer = {
     icons = {
       show = {
-        git = true
+        git = true,
       },
       glyphs = {
         git = {
@@ -96,18 +96,17 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
           empty_open = "",
           symlink = "",
         },
-
-      }
-    }
-  }
-}
+      },
+    },
+  },
+})
 
 -- autoclose functionality
 vim.api.nvim_create_autocmd("BufEnter", {
   nested = true,
   callback = function()
     if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
-      vim.cmd "quit"
+      vim.cmd("quit")
     end
-  end
+  end,
 })

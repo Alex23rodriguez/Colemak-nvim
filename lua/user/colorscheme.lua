@@ -1,6 +1,5 @@
-
 -- disable background for transparency, even when changing color schemes
-vim.cmd "au ColorScheme * hi Normal ctermbg=none guibg=none"
+vim.cmd("au ColorScheme * hi Normal ctermbg=none guibg=none")
 
 local colorscheme = "tokyonight"
 
@@ -12,8 +11,8 @@ end
 
 -- default select color for everblush is not very visible
 -- vim colors: https://codeyarns.com/tech/2011-07-29-vim-chart-of-color-names.html
-if colorscheme=="everblush" then
-  vim.cmd "hi Visual guibg=DarkSlateGray"
+if colorscheme == "everblush" then
+  vim.cmd("hi Visual guibg=DarkSlateGray")
 end
 
 -- change Diffview colors

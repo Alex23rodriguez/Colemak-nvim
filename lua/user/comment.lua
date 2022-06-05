@@ -3,39 +3,39 @@ if not status_ok then
   return
 end
 
-comment.setup {
+comment.setup({
 
----LHS of toggle mappings in NORMAL + VISUAL mode
-    ---@type table
-    toggler = {
-        ---Line-comment toggle keymap
-        line = 'gcc',
-        ---Block-comment toggle keymap
-        block = 'gbc',
-    },
+  ---LHS of toggle mappings in NORMAL + VISUAL mode
+  ---@type table
+  toggler = {
+    ---Line-comment toggle keymap
+    line = "gcc",
+    ---Block-comment toggle keymap
+    block = "gbc",
+  },
 
-    ---LHS of operator-pending mappings in NORMAL + VISUAL mode
-    ---@type table
-    opleader = {
-        ---Line-comment keymap
-        line = 'gc',
-        ---Block-comment keymap
-        block = 'gb',
-    },
+  ---LHS of operator-pending mappings in NORMAL + VISUAL mode
+  ---@type table
+  opleader = {
+    ---Line-comment keymap
+    line = "gc",
+    ---Block-comment keymap
+    block = "gb",
+  },
 
-    ---LHS of extra mappings
-    ---@type table
-    extra = {
-        ---Add comment on the line above
-        above = 'gcO',
-        ---Add comment on the line below
-        below = 'gco',
-        ---Add comment at the end of line
-        eol = 'gcA',
-    },
+  ---LHS of extra mappings
+  ---@type table
+  extra = {
+    ---Add comment on the line above
+    above = "gcO",
+    ---Add comment on the line below
+    below = "gco",
+    ---Add comment at the end of line
+    eol = "gcA",
+  },
 
   pre_hook = function(ctx)
-    local U = require "Comment.utils"
+    local U = require("Comment.utils")
 
     local location = nil
     if ctx.ctype == U.ctype.block then
@@ -44,12 +44,12 @@ comment.setup {
       location = require("ts_context_commentstring.utils").get_visual_start_location()
     end
 
-    return require("ts_context_commentstring.internal").calculate_commentstring {
+    return require("ts_context_commentstring.internal").calculate_commentstring({
       key = ctx.ctype == U.ctype.line and "__default" or "__multiline",
       location = location,
-    }
+    })
   end,
-}
+})
 
 -- Examples
 --[[ `gcw` - Toggle from the current cursor position to the next word

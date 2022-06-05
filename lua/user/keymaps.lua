@@ -145,12 +145,15 @@ keymap("v", "p", '"_dP', opts)
 keymap("x", "<A-e>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-u>", ":move '<-2<CR>gv-gv", opts)
 
--- Terminal --
--- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- ToggleTerminal --
+keymap("n", "<C-x>t", "<cmd>lua _TERMINAL_TOGGLE()<cr>", opts)
+keymap("n", "<C-x>g", "<cmd>lua _LAZYGIT_TOGGLE()<cr>", opts)
+keymap("n", "<C-x>n", "<cmd>lua _NODE_TOGGLE()<cr>", opts)
+keymap("n", "<C-x>s", "<cmd>lua _NCDU_TOGGLE()<cr>", opts)
+keymap("n", "<C-x>h", "<cmd>lua _HTOP_TOGGLE()<cr>", opts)
+keymap("n", "<C-x>p", "<cmd>lua _PYTHON_TOGGLE()<cr>", opts)
+keymap("n", "<C-q>", "<cmd>lua _TOGGLE_CURRENT()<cr>", opts)
+keymap("t", "<C-q>", "<cmd>lua _TOGGLE_CURRENT()<cr>", opts)
 
 -- leader keymaps
 -- format

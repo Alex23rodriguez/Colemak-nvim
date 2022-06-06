@@ -58,13 +58,16 @@ return packer.startup(function(use)
   use("lukas-reineke/indent-blankline.nvim")
   use("gennaro-tedesco/nvim-jqx")
   use("lewis6991/impatient.nvim")
-  use("goolord/alpha-nvim")
-  use("ahmedkhalf/project.nvim")
 
   -- motion
   use("jeetsukumaran/vim-indentwise")
   use("unblevable/quick-scope")
   use("tpope/vim-surround")
+
+  -- navigation
+  use("folke/which-key.nvim")
+  use("goolord/alpha-nvim")
+  use("ahmedkhalf/project.nvim")
 
   -- cmp plugins
   use("hrsh7th/nvim-cmp") -- The completion plugin

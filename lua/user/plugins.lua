@@ -65,7 +65,6 @@ return packer.startup(function(use)
   use("tpope/vim-surround")
 
   -- navigation
-  use("folke/which-key.nvim")
   use("goolord/alpha-nvim")
   use("ahmedkhalf/project.nvim")
   use("aserowy/tmux.nvim")

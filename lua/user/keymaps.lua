@@ -155,7 +155,7 @@ keymap("t", "<C-q>", "<cmd>lua _TOGGLE_CURRENT()<cr>", opts)
 
 -- leader keymaps
 -- Format
-keymap("n", "<leader>f", ":Format<cr>", opts)
+keymap("n", "<leader>F", ":Format<cr>", opts)
 
 -- Comment
 keymap("", "<leader>/", "gc", { noremap = false, silent = true })
@@ -167,7 +167,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- Telescope commands
 -- view more here: https://github.com/nvim-telescope/telescope.nvim
 -- maybe useful: help_tags, treesitter, lsp_definitions, symbols
-keymap("n", "<leader>F", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>p", "<cmd>Telescope oldfiles<cr>", opts)
 -- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)

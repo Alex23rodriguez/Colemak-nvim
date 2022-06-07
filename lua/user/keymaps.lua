@@ -147,7 +147,7 @@ keymap("n", "<leader>F", ":Format<cr>", opts)
 -- Comment
 keymap("", "<leader>/", "gc", { noremap = false, silent = true })
 keymap("n", "<leader>/", "gcc", { noremap = false, silent = true })
-
+--
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
@@ -174,3 +174,20 @@ keymap(
   opts
 )
 -- keymap("n", "<leader>h", "<cmd>Telescope help_tags<cr>", opts)
+
+-- Debugger
+-- dap
+keymap("n", "<leader>db", "<cmd>lua require('dap').toggle_breakpoint()<cr>", opts)
+keymap("n", "<leader>dB", "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", opts)
+keymap("n", "<leader>dc", "<cmd>lua require('dap').continue()<cr>", opts)
+keymap("n", "<leader>di", "<cmd>lua require('dap').step_over()<cr>", opts)
+keymap("n", "<leader>dn", "<cmd>lua require('dap').step_back()<cr>", opts)
+keymap("n", "<leader>de", "<cmd>lua require('dap').step_into()<cr>", opts)
+keymap("n", "<leader>du", "<cmd>lua require('dap').step_out()<cr>", opts)
+keymap("n", "<leader>dE", "<cmd>lua require('dap').down()<cr>", opts)
+keymap("n", "<leader>dU", "<cmd>lua require('dap').up()<cr>", opts)
+keymap("n", "<leader>dr", "<cmd>lua require('dap').repl.open()<cr>", opts)
+keymap("n", "<leader>dp", "<cmd>lua require('dap').pause()<cr>", opts)
+keymap("n", "<leader>dk", "<cmd>lua require('dap').terminate()<cr>", opts)
+-- dapui
+keymap("n", "<leader>dg", "<cmd>lua require('dapui').toggle()<cr>", opts) -- remember: gui

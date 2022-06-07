@@ -115,6 +115,12 @@ return packer.startup(function(use)
   -- Python
   use("jupyter-vim/jupyter-vim")
 
+  -- Debugging
+  use("mfussenegger/nvim-dap")
+  use("rcarriga/nvim-dap-ui")
+  use("theHamsta/nvim-dap-virtual-text")
+  use("mfussenegger/nvim-dap-python")
+
   --[[ Lazy Loading
 
   -- Load on specific commands

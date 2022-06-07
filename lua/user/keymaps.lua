@@ -154,8 +154,12 @@ keymap("n", "<C-q>", "<cmd>lua _TOGGLE_CURRENT()<cr>", opts)
 keymap("t", "<C-q>", "<cmd>lua _TOGGLE_CURRENT()<cr>", opts)
 
 -- leader keymaps
--- format
+-- Format
 keymap("n", "<leader>f", ":Format<cr>", opts)
+
+-- Comment
+keymap("", "<leader>/", "gc", { noremap = false, silent = true })
+keymap("n", "<leader>/", "gcc", { noremap = false, silent = true })
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)

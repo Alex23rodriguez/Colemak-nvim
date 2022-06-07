@@ -62,6 +62,13 @@ keymap("", "se", "<C-w>j", opts)
 keymap("", "su", "<C-w>k", opts)
 keymap("", "si", "<C-w>l", opts)
 
+-- TODO test with tmux
+keymap("", "<C-n>", "<C-w>h", opts)
+keymap("", "<C-e>", "<C-w>j", opts)
+keymap("", "<C-u>", "<C-w>k", opts)
+keymap("", "<C-i>", "<C-w>l", opts)
+keymap("", "<C-j>", "<C-w>l", opts) -- maybe necessary because of <tab> conflict
+
 keymap("n", "sv", "<cmd>vsplit<cr>", opts)
 keymap("n", "sh", "<cmd>split<cr>", opts)
 

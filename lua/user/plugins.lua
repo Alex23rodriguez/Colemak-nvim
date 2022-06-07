@@ -110,6 +110,9 @@ return packer.startup(function(use)
   use("sindrets/diffview.nvim")
   use("ruifm/gitlinker.nvim")
 
+  -- Python
+  use("jupyter-vim/jupyter-vim")
+
   --[[ Lazy Loading
 
   -- Load on specific commands

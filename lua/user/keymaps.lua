@@ -61,15 +61,15 @@ keymap("", "<C-u>", "<C-w>k", opts)
 keymap("", "<C-i>", "<C-w>l", opts)
 keymap("", "<C-j>", "<C-w>l", opts) -- maybe necessary because of <tab> conflict
 
-keymap("n", "s", "<Nop>", opts)
-keymap("n", "sv", "<cmd>vsplit<cr>", opts)
-keymap("n", "sh", "<cmd>split<cr>", opts)
+keymap("n", "<c-w>", "<cmd>Bdelete<cr>", opts)
+keymap("n", "s", "<c-w>", opts) -- to access normal window commands
+keymap("n", "sh", "<c-w>s", opts)
 
+-- turbomove
 keymap("", "E", "5j", opts)
 keymap("", "U", "5k", opts)
 
 keymap("", "S", "z", opts)
-keymap("n", "<c-w>", "<cmd>Bdelete<cr>", opts)
 keymap("n", "gA", "<cmd>Alpha<cr>", opts)
 
 -- remap shift-enter to enter empty line. Need to modify terminal behavior: https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
@@ -90,19 +90,6 @@ keymap("n", "<A-e>", ":m .+1<CR>==", opts)
 keymap("n", "L", "<C-o>", opts)
 keymap("n", "Y", "<C-i>", opts)
 
--- Better window navigation
-keymap("n", "s", "<Nop>", opts)
-
-keymap("n", "sn", "<C-w>h", opts)
-keymap("n", "se", "<C-w>j", opts)
-keymap("n", "su", "<C-w>k", opts)
-keymap("n", "si", "<C-w>l", opts)
-
-keymap("n", "sv", "<cmd>vsplit<cr>", opts)
-keymap("n", "sh", "<cmd>split<cr>", opts)
-
-keymap("n", "sI", "<C-w>x", opts)
-keymap("n", "sr", "<C-w>r", opts)
 -- Navigate buffers
 keymap("n", "l", ":bnext<CR>", opts)
 keymap("n", "sl", ":bprev<CR>", opts)

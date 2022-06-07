@@ -58,6 +58,7 @@ return packer.startup(function(use)
   use("lukas-reineke/indent-blankline.nvim")
   use("gennaro-tedesco/nvim-jqx")
   use("lewis6991/impatient.nvim")
+  use("norcalli/nvim-colorizer.lua")
 
   -- motion
   use("jeetsukumaran/vim-indentwise")

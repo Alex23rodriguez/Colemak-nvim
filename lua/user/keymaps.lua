@@ -156,7 +156,12 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- maybe useful: help_tags, treesitter, lsp_definitions, symbols
 keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>p", "<cmd>Telescope oldfiles<cr>", opts)
--- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap(
+  "n",
+  "/",
+  "<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  opts
+)
 keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "gr", "<cmd>Telescope lsp_references theme=ivy<cr>", opts)
 keymap("n", "<leader>'", "<cmd>Telescope marks theme=ivy<cr>", opts)

@@ -3,8 +3,6 @@ if not status_ok then
   return
 end
 
-telescope.load_extension("media_files")
-
 local actions = require("telescope.actions")
 
 telescope.setup({
@@ -89,16 +87,27 @@ telescope.setup({
     -- builtin picker
   },
   extensions = {
+    -- Your extension configuration goes here:
+    -- extension_name = {
+    --   extension_config_key = value,
+    -- }
     media_files = {
       -- filetypes whitelist
       -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
       filetypes = { "png", "webp", "jpg", "jpeg", "mp3" },
       find_cmd = "rg", -- find command (defaults to `fd`)
     },
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+      -- the default case_mode is "smart_case"
+    },
     -- please take a look at the readme of the extension you want to configure
   },
 })
+
+telescope.load_extension("media_files")
+telescope.load_extension("projects")
+telescope.load_extension("fzf")

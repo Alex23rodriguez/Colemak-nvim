@@ -54,26 +54,16 @@ keymap("n", "Z", "<C-r>", opts)
 -- remap shift-enter to enter empty line. Need to modify terminal behavior: https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
 keymap("n", "<S-CR>", "o<esc>", opts)
 
--- Better window navigation
-keymap("n", "s", "<Nop>", opts)
-
-keymap("", "sn", "<C-w>h", opts)
-keymap("", "se", "<C-w>j", opts)
-keymap("", "su", "<C-w>k", opts)
-keymap("", "si", "<C-w>l", opts)
-
--- TODO test with tmux
+-- Colemak window navigation
 keymap("", "<C-n>", "<C-w>h", opts)
 keymap("", "<C-e>", "<C-w>j", opts)
 keymap("", "<C-u>", "<C-w>k", opts)
 keymap("", "<C-i>", "<C-w>l", opts)
 keymap("", "<C-j>", "<C-w>l", opts) -- maybe necessary because of <tab> conflict
 
+keymap("n", "s", "<Nop>", opts)
 keymap("n", "sv", "<cmd>vsplit<cr>", opts)
 keymap("n", "sh", "<cmd>split<cr>", opts)
-
-keymap("n", "sI", "<C-w>x", opts)
-keymap("n", "sr", "<C-w>r", opts)
 
 keymap("", "E", "5j", opts)
 keymap("", "U", "5k", opts)

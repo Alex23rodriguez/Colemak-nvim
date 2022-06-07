@@ -68,6 +68,7 @@ return packer.startup(function(use)
   use("folke/which-key.nvim")
   use("goolord/alpha-nvim")
   use("ahmedkhalf/project.nvim")
+  use("aserowy/tmux.nvim")
 
   -- cmp plugins
   use("hrsh7th/nvim-cmp") -- The completion plugin

@@ -55,7 +55,7 @@ bufferline.setup({
     --     return true
     --   end
     -- end,
-    offsets = { { filetype = "NvimTree", text = "hello", padding = 0 } },
+    offsets = { { filetype = "NvimTree", text = "File Explorer", padding = 0 } },
     show_buffer_icons = true,
     show_buffer_close_icons = true,
     show_close_icon = true,

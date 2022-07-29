@@ -61,9 +61,28 @@ keymap("", "<C-u>", "<C-w>k", opts)
 keymap("", "<C-i>", "<C-w>l", opts)
 keymap("", "<C-j>", "<C-w>l", opts) -- maybe necessary because of <tab> conflict
 
+-- Navigate buffers
+keymap("n", "l", "<cmd>BufferLinePick<CR>", opts) -- pick a buffer
+keymap("n", "ss", ":b#<CR>", opts) -- go back to previous file
+keymap("n", "si", "<cmd>BufferLineCycleNext<CR>", opts)
+keymap("n", "sn", "<cmd>BufferLineCyclePrev<CR>", opts)
+keymap("n", "sl", "<cmd>BufferLineMovePrev<CR>", opts)
+keymap("n", "sy", "<cmd>BufferLineMoveNext<CR>", opts)
+
+-- manage buffers and windows
 keymap("n", "<c-w>", "<cmd>Bdelete<cr>", opts)
 keymap("n", "s", "<c-w>", opts) -- to access normal window commands
-keymap("n", "sh", "<c-w>s", opts)
+keymap("n", "sS", "<c-w>x", opts) -- Swap current window with N window (default next)
+
+keymap("n", "sh", "<c-w>s", opts) -- split horizontally
+
+keymap("n", "sv", "<c-w>v", opts) -- redundant. split vertically
+keymap("n", "sd", "<c-w>d", opts) -- redundant. split and go to def
+keymap("n", "sgt", "<c-w>gt", opts) -- redundant. go to next tab
+keymap("n", "sgT", "<c-w>gT", opts) -- redundant. go to prev tab
+keymap("n", "so", "<c-w>o", opts) -- redundant. close all but current window (zen mode lol)
+keymap("n", "sz", "<c-w>z", opts) -- redundant. close preview window
+keymap("n", "sq", "<c-w>q", opts) -- redundant. quit current window (like :quit)
 
 -- turbomove
 keymap("", "E", "5j", opts)
@@ -89,10 +108,6 @@ keymap("n", "<A-e>", ":m .+1<CR>==", opts)
 -- better jump hist at Querty's U and O
 keymap("n", "L", "<C-o>", opts)
 keymap("n", "Y", "<C-i>", opts)
-
--- Navigate buffers
-keymap("n", "l", ":bnext<CR>", opts)
-keymap("n", "sl", ":bprev<CR>", opts)
 
 -- misc
 keymap("n", "gs", "<cmd>source %<cr><cmd>echo 'file sourced!'<cr>", opts)
@@ -156,6 +171,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- maybe useful: help_tags, treesitter, lsp_definitions, symbols
 keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>p", "<cmd>Telescope oldfiles<cr>", opts)
+keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 keymap(
   "n",
   "/",

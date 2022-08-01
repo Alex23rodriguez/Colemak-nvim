@@ -44,8 +44,8 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
         { key = "y", action = "copy_name" },
         { key = "Y", action = "copy_path" },
         { key = "gy", action = "copy_absolute_path" },
-        { key = "d", action = "remove" },
-        { key = "D", action = "trash" },
+        { key = "D", action = "remove" },
+        { key = "d", action = "trash" },
         { key = "r", action = "rename" },
         { key = "<C-v>", action = "toggle_file_info" },
         { key = "<C-t>", action = "tabnew" },
@@ -77,7 +77,7 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
     },
   },
   trash = {
-    cmd = "!echo 'trash unavailable'",
+    cmd = "sh ~/Documents/Code/Scripts/trash.sh",
     require_confirm = true,
   },
   renderer = {

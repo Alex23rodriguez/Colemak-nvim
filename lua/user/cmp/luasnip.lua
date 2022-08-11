@@ -38,4 +38,8 @@ vim.keymap.set({ "i", "s" }, "<C-d>", function()
 end)
 
 -- shortcut to source my snippets file, to reload my snippets
-vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/user/cmp/my_snippets.lua<CR>")
+vim.keymap.set(
+  "n",
+  "<leader><leader>s",
+  "<cmd>source ~/.config/nvim/lua/user/cmp/my_snippets.lua<CR><cmd>lua print('snippets sourced')<CR>"
+)

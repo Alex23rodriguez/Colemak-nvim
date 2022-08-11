@@ -115,6 +115,9 @@ return packer.startup(function(use)
   -- Python
   use("jupyter-vim/jupyter-vim")
 
+  -- LaTeX
+  use("lervag/vimtex")
+
   -- Debugging
   use("mfussenegger/nvim-dap")
   use("rcarriga/nvim-dap-ui")

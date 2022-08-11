@@ -27,7 +27,7 @@ configs.setup({
       -- "Salmon",
       -- "LawnGreen",
     },
-    disable = { "html" },
+    disable = { "html", "tsx" },
   },
   playground = {
     enable = true,

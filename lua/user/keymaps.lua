@@ -47,6 +47,10 @@ keymap("n", "<A-e>", ":m .+1<CR>==", opts)
 keymap("n", "L", "<C-o>", opts)
 keymap("n", "Y", "<C-i>", opts)
 
+-- Accents (choose one of the two)
+-- keymap("i", "<C-o>", "<C-k>", opts) -- use now free <C-o> for diagraphs (<C-k> is used by tmux)
+keymap("i", "<C-o>", "<C-k>'", opts) -- use now free <C-o> for accents (<C-k> is used by tmux)
+
 -- remap undo and redo to z and Z
 keymap("n", "z", "u", opts)
 keymap("n", "Z", "<C-r>", opts)
@@ -175,7 +179,8 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 keymap(
   "n",
   "/",
-  "<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  "<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ previewer = false }))<cr>"
+  ,
   opts
 )
 keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)

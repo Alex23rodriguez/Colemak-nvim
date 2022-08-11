@@ -15,7 +15,7 @@ ls.config.set_config({
 
 -- <C-t> is my expansion key
 -- this will expand the current item or jump to the next item within the snippet.
-vim.keymap.set({ "i", "s" }, "<C-t>", function()
+vim.keymap.set({ "i", "s", "n" }, "<C-t>", function()
   if ls.expand_or_jumpable() then
     ls.expand_or_jump()
   end
@@ -23,7 +23,7 @@ end, { silent = true })
 
 -- <C-T> is my jump backwards key.
 -- this always moves to the previous item within the snippet
-vim.keymap.set({ "i", "s" }, "<M-S-t>", function()
+vim.keymap.set({ "i", "s", "n" }, "<M-S-t>", function()
   if ls.jumpable(-1) then
     ls.jump(-1)
   end

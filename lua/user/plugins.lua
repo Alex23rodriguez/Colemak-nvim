@@ -66,6 +66,7 @@ return packer.startup(function(use)
   use("tpope/vim-surround")
 
   -- navigation
+  use("ThePrimeagen/harpoon") --[[ https://github.com/ThePrimeagen/harpoon ]]
   use("goolord/alpha-nvim")
   use("ahmedkhalf/project.nvim")
   use("aserowy/tmux.nvim")
@@ -111,6 +112,9 @@ return packer.startup(function(use)
   use("lewis6991/gitsigns.nvim")
   use("sindrets/diffview.nvim")
   use("ruifm/gitlinker.nvim")
+
+  -- Web dev
+  use("windwp/nvim-ts-autotag") --[[ autoclose tags in jsx and html https://github.com/windwp/nvim-ts-autotag ]]
 
   -- Python
   use("jupyter-vim/jupyter-vim")

@@ -108,6 +108,7 @@ telescope.setup({
   },
 })
 
+telescope.load_extension("harpoon")
 telescope.load_extension("media_files")
 telescope.load_extension("projects")
 telescope.load_extension("fzf")

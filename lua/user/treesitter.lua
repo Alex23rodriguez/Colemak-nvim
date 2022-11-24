@@ -3,6 +3,9 @@ configs.setup({
   ensure_installed = {},
   sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
+  autotag = {
+    enable = true, --[[ autoclose tags in html and jsx (comes from nvim-ts-autotag) ]]
+  },
   autopairs = {
     enable = true,
   },

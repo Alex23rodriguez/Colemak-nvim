@@ -35,9 +35,66 @@ local i = ls.insert_node
 local t = ls.text_node
 local c = ls.choice_node
 local f = ls.function_node
-local rep = require("luasnip.extras").rep
+local rep = require("luasnip.extras").rep -- repeat node
 
 ls.add_snippets("all", {
   -- snippets for all filetypes
   s("trn", fmt("{} ? {} : {}", { i(1, "cond"), i(2, "true"), i(3, "false") })),
+})
+
+local webdev_snips = {
+  -- anonymous function
+  s("af", fmt("({}) => {{{}}}", { i(1), i(2) })),
+}
+
+for _, lang in pairs({ "javascript", "typescript", "typescriptreact" }) do
+  for _, snip in pairs(webdev_snips) do
+    ls.add_snippets(lang, webdev_snips)
+  end
+end
+
+ls.add_snippets("tex", {
+  s("it", fmt("\\textit{{{}}}", i(1))),
+  s("bold", fmt("\\textbf{{{}}}", i(1))),
+  s("mono", fmt("\\texttt{{{}}}", i(1))),
+  s("href", fmt("\\href{{{}}}{{{}}}", { i(1, "url"), i(2, "placeholder") })),
+})
+
+ls.add_snippets("bib", {
+  s(
+    "article",
+    fmt(
+      "@article{{{},\n  title={{{}}},\n  author={{{}}},\n  journal={{{}}},\n  volume={{{}}},\n  number={{{}}},\n  pages={{{}}},\n  year={{{}}},\n  publisher={{{}}}\n}}"
+      ,
+      {
+        i(1, "latexref"),
+        i(2, "str"),
+        i(3, "last,first [and]"),
+        i(4, "str"),
+        i(5, "int"),
+        i(6, "int"),
+        i(7, "int--int"),
+        i(8, "int"),
+        i(9, "str"),
+      }
+    )
+  ),
+  s(
+    "misc",
+    fmt(
+      "@misc{{{},\n  title={{{}}},\n  url={{{}}},\n  howpublished={{{}}},\n  journal={{{}}},\n  author={{{}}},\n  publisher={{{}}},\n  year={{{}}},\n  month={{{}}}\n}}"
+      ,
+      {
+        i(1, "latexref"),
+        i(2, "str"),
+        i(3, "href"),
+        rep(3),
+        i(4, "journal"),
+        i(5, "last,first [and] / foundation"),
+        i(6, "publisher"),
+        i(7, "int"),
+        i(8, "ccc"),
+      }
+    )
+  ),
 })

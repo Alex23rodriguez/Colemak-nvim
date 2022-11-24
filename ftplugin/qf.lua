@@ -1,2 +1,1 @@
-vim.api.nvim_del_keymap("n", "<cr>")
-
+-- vim.api.nvim_del_keymap("n", "<cr>")

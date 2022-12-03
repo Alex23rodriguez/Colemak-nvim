@@ -39,13 +39,29 @@ keymap("n", "i", "l", opts)
 -- remap enter to insert
 keymap("n", "<CR>", "i", opts)
 
--- Move current line ala vscode
-keymap("n", "<A-u>", ":m .-2<CR>==", opts)
-keymap("n", "<A-e>", ":m .+1<CR>==", opts)
+-- turbomove
+keymap("", "E", "5j", opts)
+keymap("", "U", "5k", opts)
 
--- better jump hist at Querty's U and O
-keymap("n", "L", "<C-o>", opts)
-keymap("n", "Y", "<C-i>", opts)
+-- ultra quick vertical movement
+--[[ keymap("n", "L", "<PageUp>zz", opts) ]]
+--[[ keymap("n", "Y", "<PageDown>zz", opts) ]]
+keymap("n", "L", "25kzz", opts)
+keymap("n", "Y", "25jzz", opts)
+
+-- Move current line ala vscode
+keymap("n", "<A-u>", ":m .-2<CR>==", opts) -- == indents line if necessary
+keymap("n", "<A-e>", ":m .+1<CR>==", opts)
+-- insert mode --
+keymap("i", "<A-u>", "<Esc>:m .-2<CR>==gi", opts)
+keymap("i", "<A-e>", "<Esc>:m .+1<CR>==gi", opts)
+-- Visual Block --
+keymap("x", "<A-e>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-u>", ":move '<-2<CR>gv-gv", opts)
+
+-- better jump hist at Querty's n (back) and i (forward)
+keymap("n", "<A-n>", "<C-o>", opts)
+keymap("n", "<A-i>", "<C-i>", opts)
 
 -- Accents (choose one of the two)
 -- keymap("i", "<C-o>", "<C-k>", opts) -- use now free <C-o> for diagraphs (<C-k> is used by tmux)
@@ -54,6 +70,11 @@ keymap("i", "<C-o>", "<C-k>'", opts) -- use now free <C-o> for accents (<C-k> is
 -- remap undo and redo to z and Z
 keymap("n", "z", "u", opts)
 keymap("n", "Z", "<C-r>", opts)
+--
+-- remap S to z because z is used for undo
+keymap("", "S", "z", opts)
+-- remap leader z to center screen
+keymap("n", "<leader>z", "zz", opts)
 
 -- remap shift-enter to enter empty line. Need to modify terminal behavior: https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
 keymap("n", "<S-CR>", "o<esc>", opts)
@@ -99,15 +120,9 @@ keymap("n", "so", "<c-w>o", opts) -- redundant. close all but current window (ze
 keymap("n", "sz", "<c-w>z", opts) -- redundant. close preview window
 keymap("n", "sq", "<c-w>q", opts) -- redundant. quit current window (like :quit)
 
--- turbomove
-keymap("", "E", "5j", opts)
-keymap("", "U", "5k", opts)
-
-keymap("", "S", "z", opts)
-keymap("n", "gA", "<cmd>Alpha<cr>", opts)
-
 -- remap shift-enter to enter empty line. Need to modify terminal behavior: https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
 keymap("n", "<S-CR>", "o<esc>", opts)
+keymap("n", "gA", "<cmd>Alpha<cr>", opts)
 
 -- Normal --
 -- Colemak settings
@@ -115,14 +130,6 @@ keymap("n", "i", "l", opts)
 
 -- remap enter to insert
 keymap("n", "<CR>", "i", opts)
-
--- Move current line ala vscode
-keymap("n", "<A-u>", ":m .-2<CR>==", opts)
-keymap("n", "<A-e>", ":m .+1<CR>==", opts)
-
--- better jump hist at Querty's U and O
-keymap("n", "L", "<C-o>", opts)
-keymap("n", "Y", "<C-i>", opts)
 
 -- misc
 keymap("n", "gs", "<cmd>source %<cr><cmd>echo 'file sourced!'<cr>", opts)
@@ -139,11 +146,8 @@ keymap("n", "[q", ":cprev<CR>", opts)
 -- keymap("n", "<C-q>", ":call QuickFixToggle<CR>", opts)
 
 -- Insert --
--- Move current line ala vscode
-keymap("i", "<A-u>", "<Esc>:m .-2<CR>==gi", opts)
-keymap("i", "<A-e>", "<Esc>:m .+1<CR>==gi", opts)
 -- Press kk fast to exit insert mode
-keymap("i", "kk", "<ESC>", opts)
+--[[ keymap("i", "kk", "<ESC>", opts) ]]
 keymap("i", "<S-CR>", "<C-o>o", opts)
 
 -- Visual --
@@ -154,11 +158,6 @@ keymap("v", ">", ">gv", opts)
 
 -- when pasting over something, don't override register
 keymap("v", "p", '"_dP', opts)
-
--- Visual Block --
--- Move text up and down
-keymap("x", "<A-e>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-u>", ":move '<-2<CR>gv-gv", opts)
 
 -- ToggleTerminal --
 keymap("n", "<C-x>t", "<cmd>lua _TERMINAL_TOGGLE()<cr>", opts)

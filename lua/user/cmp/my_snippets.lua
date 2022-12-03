@@ -82,7 +82,7 @@ ls.add_snippets("bib", {
   s(
     "misc",
     fmt(
-      "@misc{{{},\n  title={{{}}},\n  url={{{}}},\n  howpublished={{{}}},\n  journal={{{}}},\n  author={{{}}},\n  publisher={{{}}},\n  year={{{}}},\n  month={{{}}}\n}}"
+      "@misc{{{},\n  title={{{}}},\n  url={{{}}},\n  howpublished={{\\url{{{}}}}},\n  journal={{{}}},\n  author={{{}}},\n  publisher={{{}}},\n  year={{{}}},\n  month={{{}}}\n}}"
       ,
       {
         i(1, "latexref"),

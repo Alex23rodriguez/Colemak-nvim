@@ -223,3 +223,8 @@ keymap("n", "<leader>dp", "<cmd>lua require('dap').pause()<cr>", opts)
 keymap("n", "<leader>dk", "<cmd>lua require('dap').terminate()<cr>", opts)
 -- dapui
 keymap("n", "<leader>dg", "<cmd>lua require('dapui').toggle()<cr>", opts) -- remember: gui
+
+-- ssh
+vim.keymap.set('n', '<leader>Y', require('osc52').copy_operator, {expr = true})
+vim.keymap.set('n', '<leader>YY', '<leader>Y_', {remap = true})
+vim.keymap.set('x', '<leader>Y', require('osc52').copy_visual)

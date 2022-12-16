@@ -128,6 +128,10 @@ return packer.startup(function(use)
   use("theHamsta/nvim-dap-virtual-text")
   use("mfussenegger/nvim-dap-python")
 
+  -- SSH
+  -- plugin to copy across ssh
+  use("ojroques/nvim-osc52")
+
   --[[ Lazy Loading
 
   -- Load on specific commands

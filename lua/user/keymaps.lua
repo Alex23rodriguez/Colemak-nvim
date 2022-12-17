@@ -1,3 +1,7 @@
+-- references:
+-- https://github.com/nanotee/nvim-lua-guide
+-- https://neovim.io/doc/user/api.html#nvim_set_keymap()
+
 local opts = { noremap = true, silent = true }
 
 -- Shorten function name
@@ -39,13 +43,29 @@ keymap("n", "i", "l", opts)
 -- remap enter to insert
 keymap("n", "<CR>", "i", opts)
 
--- Move current line ala vscode
-keymap("n", "<A-u>", ":m .-2<CR>==", opts)
-keymap("n", "<A-e>", ":m .+1<CR>==", opts)
+-- turbomove
+keymap("", "E", "5j", opts)
+keymap("", "U", "5k", opts)
 
--- better jump hist at Querty's U and O
-keymap("n", "L", "<C-o>", opts)
-keymap("n", "Y", "<C-i>", opts)
+-- ultra quick vertical movement
+--[[ keymap("n", "L", "<PageUp>zz", opts) ]]
+--[[ keymap("n", "Y", "<PageDown>zz", opts) ]]
+keymap("n", "L", "25kzz", opts)
+keymap("n", "Y", "25jzz", opts)
+
+-- Move current line ala vscode
+keymap("n", "<A-u>", ":m .-2<CR>==", opts) -- == indents line if necessary
+keymap("n", "<A-e>", ":m .+1<CR>==", opts)
+-- insert mode --
+keymap("i", "<A-u>", "<Esc>:m .-2<CR>==gi", opts)
+keymap("i", "<A-e>", "<Esc>:m .+1<CR>==gi", opts)
+-- Visual Block --
+keymap("x", "<A-e>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-u>", ":move '<-2<CR>gv-gv", opts)
+
+-- better jump hist at Querty's n (back) and i (forward)
+keymap("n", "<A-n>", "<C-o>", opts)
+keymap("n", "<A-i>", "<C-i>", opts)
 
 -- Accents (choose one of the two)
 -- keymap("i", "<C-o>", "<C-k>", opts) -- use now free <C-o> for diagraphs (<C-k> is used by tmux)
@@ -54,9 +74,15 @@ keymap("i", "<C-o>", "<C-k>'", opts) -- use now free <C-o> for accents (<C-k> is
 -- remap undo and redo to z and Z
 keymap("n", "z", "u", opts)
 keymap("n", "Z", "<C-r>", opts)
+--
+-- remap S to z because z is used for undo
+keymap("", "S", "z", opts)
+-- remap leader z to center screen
+keymap("n", "<leader>z", "zz", opts)
 
 -- remap shift-enter to enter empty line. Need to modify terminal behavior: https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
 keymap("n", "<S-CR>", "o<esc>", opts)
+keymap("i", "<S-CR>", "<C-o>o", opts)
 
 -- Colemak window navigation
 keymap("", "<C-n>", "<C-w>h", opts)
@@ -79,6 +105,7 @@ keymap("n", "<leader>a", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>
 keymap("n", "<leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", opts)
 keymap("n", "<leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", opts)
 keymap("n", "<leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", opts)
+keymap("n", "<leader>4", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", opts)
 keymap("n", "<leader>7", "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>", opts)
 keymap("n", "<leader>8", "<cmd>lua require('harpoon.term').gotoTerminal(2)<CR>", opts)
 keymap("n", "<leader>9", "<cmd>lua require('harpoon.term').gotoTerminal(3)<CR>", opts)
@@ -99,15 +126,7 @@ keymap("n", "so", "<c-w>o", opts) -- redundant. close all but current window (ze
 keymap("n", "sz", "<c-w>z", opts) -- redundant. close preview window
 keymap("n", "sq", "<c-w>q", opts) -- redundant. quit current window (like :quit)
 
--- turbomove
-keymap("", "E", "5j", opts)
-keymap("", "U", "5k", opts)
-
-keymap("", "S", "z", opts)
 keymap("n", "gA", "<cmd>Alpha<cr>", opts)
-
--- remap shift-enter to enter empty line. Need to modify terminal behavior: https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
-keymap("n", "<S-CR>", "o<esc>", opts)
 
 -- Normal --
 -- Colemak settings
@@ -115,14 +134,6 @@ keymap("n", "i", "l", opts)
 
 -- remap enter to insert
 keymap("n", "<CR>", "i", opts)
-
--- Move current line ala vscode
-keymap("n", "<A-u>", ":m .-2<CR>==", opts)
-keymap("n", "<A-e>", ":m .+1<CR>==", opts)
-
--- better jump hist at Querty's U and O
-keymap("n", "L", "<C-o>", opts)
-keymap("n", "Y", "<C-i>", opts)
 
 -- misc
 keymap("n", "gs", "<cmd>source %<cr><cmd>echo 'file sourced!'<cr>", opts)
@@ -138,14 +149,6 @@ keymap("n", "]q", ":cnext<CR>", opts)
 keymap("n", "[q", ":cprev<CR>", opts)
 -- keymap("n", "<C-q>", ":call QuickFixToggle<CR>", opts)
 
--- Insert --
--- Move current line ala vscode
-keymap("i", "<A-u>", "<Esc>:m .-2<CR>==gi", opts)
-keymap("i", "<A-e>", "<Esc>:m .+1<CR>==gi", opts)
--- Press kk fast to exit insert mode
-keymap("i", "kk", "<ESC>", opts)
-keymap("i", "<S-CR>", "<C-o>o", opts)
-
 -- Visual --
 keymap("v", "i", "l", opts)
 -- Stay in indent mode
@@ -154,11 +157,6 @@ keymap("v", ">", ">gv", opts)
 
 -- when pasting over something, don't override register
 keymap("v", "p", '"_dP', opts)
-
--- Visual Block --
--- Move text up and down
-keymap("x", "<A-e>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-u>", ":move '<-2<CR>gv-gv", opts)
 
 -- ToggleTerminal --
 keymap("n", "<C-x>t", "<cmd>lua _TERMINAL_TOGGLE()<cr>", opts)
@@ -225,6 +223,12 @@ keymap("n", "<leader>dk", "<cmd>lua require('dap').terminate()<cr>", opts)
 keymap("n", "<leader>dg", "<cmd>lua require('dapui').toggle()<cr>", opts) -- remember: gui
 
 -- ssh
-vim.keymap.set('n', '<leader>Y', require('osc52').copy_operator, {expr = true})
-vim.keymap.set('n', '<leader>YY', '<leader>Y_', {remap = true})
-vim.keymap.set('x', '<leader>Y', require('osc52').copy_visual)
+local status_ok, osc52 = pcall(require, "osc52")
+if not status_ok then
+  print("osc52 not installed")
+  return
+end
+-- to copy across ssh connection (requires tmux or some cool terminal)
+vim.keymap.set("n", "<leader>Y", require("osc52").copy_operator, { expr = true })
+vim.keymap.set("n", "<leader>YY", "<leader>Y_", { remap = true })
+vim.keymap.set("x", "<leader>Y", require("osc52").copy_visual)

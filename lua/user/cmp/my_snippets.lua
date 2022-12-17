@@ -53,6 +53,12 @@ for _, lang in pairs({ "javascript", "typescript", "typescriptreact" }) do
   end
 end
 
+-- for python
+ls.add_snippets("python", {
+  s("foren", fmt("for {}, {} in enumerate({}):\n\t{}", { i(1, "i"), i(2, "val"), i(3, "itr"), i(0) })),
+})
+
+-- for latex
 ls.add_snippets("tex", {
   s("it", fmt("\\textit{{{}}}", i(1))),
   s("bold", fmt("\\textbf{{{}}}", i(1))),
@@ -82,7 +88,7 @@ ls.add_snippets("bib", {
   s(
     "misc",
     fmt(
-      "@misc{{{},\n  title={{{}}},\n  url={{{}}},\n  howpublished={{{}}},\n  journal={{{}}},\n  author={{{}}},\n  publisher={{{}}},\n  year={{{}}},\n  month={{{}}}\n}}"
+      "@misc{{{},\n  title={{{}}},\n  url={{{}}},\n  howpublished={{\\url{{{}}}}},\n  journal={{{}}},\n  author={{{}}},\n  publisher={{{}}},\n  year={{{}}},\n  month={{{}}}\n}}"
       ,
       {
         i(1, "latexref"),

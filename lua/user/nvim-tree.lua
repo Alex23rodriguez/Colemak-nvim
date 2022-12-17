@@ -73,6 +73,13 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
         { key = "S", action = "search_node" },
         { key = ".", action = "run_file_command" },
         { key = "?", action = "toggle_help" },
+
+        { key = "u", action = "" },
+        { key = "e", action = "" },
+        { key = "<C-i>", action = "" },
+        { key = "<C-n>", action = "" },
+        { key = "<C-u>", action = "" },
+        { key = "<C-e>", action = "" },
       },
     },
   },

@@ -1,3 +1,7 @@
+-- references:
+-- https://github.com/nanotee/nvim-lua-guide
+-- https://neovim.io/doc/user/api.html#nvim_set_keymap()
+
 local opts = { noremap = true, silent = true }
 
 -- Shorten function name
@@ -78,6 +82,7 @@ keymap("n", "<leader>z", "zz", opts)
 
 -- remap shift-enter to enter empty line. Need to modify terminal behavior: https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
 keymap("n", "<S-CR>", "o<esc>", opts)
+keymap("i", "<S-CR>", "<C-o>o", opts)
 
 -- Colemak window navigation
 keymap("", "<C-n>", "<C-w>h", opts)
@@ -100,6 +105,7 @@ keymap("n", "<leader>a", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>
 keymap("n", "<leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", opts)
 keymap("n", "<leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", opts)
 keymap("n", "<leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", opts)
+keymap("n", "<leader>4", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", opts)
 keymap("n", "<leader>7", "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>", opts)
 keymap("n", "<leader>8", "<cmd>lua require('harpoon.term').gotoTerminal(2)<CR>", opts)
 keymap("n", "<leader>9", "<cmd>lua require('harpoon.term').gotoTerminal(3)<CR>", opts)
@@ -120,8 +126,6 @@ keymap("n", "so", "<c-w>o", opts) -- redundant. close all but current window (ze
 keymap("n", "sz", "<c-w>z", opts) -- redundant. close preview window
 keymap("n", "sq", "<c-w>q", opts) -- redundant. quit current window (like :quit)
 
--- remap shift-enter to enter empty line. Need to modify terminal behavior: https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
-keymap("n", "<S-CR>", "o<esc>", opts)
 keymap("n", "gA", "<cmd>Alpha<cr>", opts)
 
 -- Normal --
@@ -144,11 +148,6 @@ keymap("n", "gs", "<cmd>source %<cr><cmd>echo 'file sourced!'<cr>", opts)
 keymap("n", "]q", ":cnext<CR>", opts)
 keymap("n", "[q", ":cprev<CR>", opts)
 -- keymap("n", "<C-q>", ":call QuickFixToggle<CR>", opts)
-
--- Insert --
--- Press kk fast to exit insert mode
---[[ keymap("i", "kk", "<ESC>", opts) ]]
-keymap("i", "<S-CR>", "<C-o>o", opts)
 
 -- Visual --
 keymap("v", "i", "l", opts)

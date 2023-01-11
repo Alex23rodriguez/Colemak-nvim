@@ -94,7 +94,7 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
       },
       glyphs = {
         git = {
-          unstaged = "",
+          unstaged = "M",
           staged = "S",
           unmerged = "",
           renamed = "➜",

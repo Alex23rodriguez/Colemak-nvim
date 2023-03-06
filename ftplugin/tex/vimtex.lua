@@ -1,8 +1,15 @@
 -- check out some tips on vimtex: https://ejmastnak.github.io/tutorials/vim-latex/compilation.html
 vim.cmd("let g:vimtex_mappings_enabled = 0")
+
+-- configure skim as default pdf viewer
 vim.cmd("let g:vimtex_view_method = 'skim'")
 vim.cmd("let g:vimtex_view_skim_activate = 1")
 vim.cmd("let g:vimtex_view_skim_reading_bar = 1")
+--
+-- only show qf on errors
+vim.api.nvim_set_var("vimtex_quickfix_open_on_warning", 0)
+
+-- keymaps
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap("n", "<leader>ll", "<cmd>VimtexCompile<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>lv", "<cmd>VimtexView<cr>", opts)

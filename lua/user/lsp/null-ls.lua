@@ -18,7 +18,7 @@ null_ls.setup({
     -- formatting.yapf,
     formatting.stylua,
 
-    diagnostics.flake8,
+    --[[ diagnostics.flake8, ]]
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then

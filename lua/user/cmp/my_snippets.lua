@@ -37,6 +37,8 @@ local c = ls.choice_node
 local f = ls.function_node
 local rep = require("luasnip.extras").rep -- repeat node
 
+local mystrings = require("user.cmp.long_strings")
+
 ls.add_snippets("all", {
   -- snippets for all filetypes
   s("trn", fmt("{} ? {} : {}", { i(1, "cond"), i(2, "true"), i(3, "false") })),
@@ -45,6 +47,7 @@ ls.add_snippets("all", {
 local webdev_snips = {
   -- anonymous function
   s("af", fmt("({}) => {{{}}}", { i(1), i(2) })),
+  s("p5", fmt(mystrings.p5js, { i(1), i(2) })),
 }
 
 for _, lang in pairs({ "javascript", "typescript", "typescriptreact" }) do
@@ -69,38 +72,43 @@ ls.add_snippets("tex", {
 ls.add_snippets("bib", {
   s(
     "article",
-    fmt(
-      "@article{{{},\n  title={{{}}},\n  author={{{}}},\n  journal={{{}}},\n  volume={{{}}},\n  number={{{}}},\n  pages={{{}}},\n  year={{{}}},\n  publisher={{{}}}\n}}"
-      ,
-      {
-        i(1, "latexref"),
-        i(2, "str"),
-        i(3, "last,first [and]"),
-        i(4, "str"),
-        i(5, "int"),
-        i(6, "int"),
-        i(7, "int--int"),
-        i(8, "int"),
-        i(9, "str"),
-      }
-    )
+    fmt(mystrings.bibtexarticle, {
+      i(1, "latexref"),
+      i(2, "str"),
+      i(3, "last,first [and]"),
+      i(4, "str"),
+      i(5, "int"),
+      i(6, "int"),
+      i(7, "int--int"),
+      i(8, "int"),
+      i(9, "str"),
+    })
   ),
   s(
     "misc",
-    fmt(
-      "@misc{{{},\n  title={{{}}},\n  url={{{}}},\n  howpublished={{\\url{{{}}}}},\n  journal={{{}}},\n  author={{{}}},\n  publisher={{{}}},\n  year={{{}}},\n  month={{{}}}\n}}"
-      ,
-      {
-        i(1, "latexref"),
-        i(2, "str"),
-        i(3, "href"),
-        rep(3),
-        i(4, "journal"),
-        i(5, "last,first [and] / foundation"),
-        i(6, "publisher"),
-        i(7, "int"),
-        i(8, "ccc"),
-      }
+    fmt(mystrings.misc, {
+      i(1, "latexref"),
+      i(2, "str"),
+      i(3, "href"),
+      rep(3),
+      i(4, "journal"),
+      i(5, "last,first [and] / foundation"),
+      i(6, "publisher"),
+      i(7, "int"),
+      i(8, "ccc"),
+    })
+  ),
+})
+
+-- for html
+ls.add_snippets("html", {
+  s("!", fmt(mystrings.basichtml, { i(1, "Document"), i(0) })),
+  s(
+    "script",
+    c(
+      1,
+      { fmt('<script src="{}"></script>{}', { i(1), i(0) }), fmt("<script>\n\t{}\n</script>{}", { i(1), i(0) }) }
     )
   ),
+  s("p5", fmt(mystrings.p5html, {})),
 })

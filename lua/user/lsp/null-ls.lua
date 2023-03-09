@@ -26,3 +26,6 @@ null_ls.setup({
 		end
 	end,
 })
+
+-- setup async Format command
+vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])

@@ -14,3 +14,6 @@ lspconfig.lua_ls.setup({
 })
 lspconfig.pyright.setup({})
 lspconfig.tsserver.setup({})
+
+-- null-ls for diagnostics and formatting
+require("user.lsp.null-ls")

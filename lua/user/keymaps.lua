@@ -59,7 +59,6 @@ keymap("", "U", "5k", opts)
 --[[ map ]_ <Plug>(IndentWiseNextAbsoluteIndent) ]]
 --[[ map [% <Plug>(IndentWiseBlockScopeBoundaryBegin) ]]
 --[[ map ]% <Plug>(IndentWiseBlockScopeBoundaryEnd) ]]
-
 -- ultra quick vertical movement
 --[[ keymap("n", "L", "<PageUp>zz", opts) ]]
 --[[ keymap("n", "Y", "<PageDown>zz", opts) ]]
@@ -199,11 +198,10 @@ keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>p", "<cmd>Telescope oldfiles<cr>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 keymap(
-  "n",
-  "/",
-  "<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ previewer = false }))<cr>"
-  ,
-  opts
+	"n",
+	"/",
+	"<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+	opts
 )
 keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "gr", "<cmd>Telescope lsp_references theme=ivy<cr>", opts)
@@ -211,10 +209,10 @@ keymap("n", "<leader>'", "<cmd>Telescope marks theme=ivy<cr>", opts)
 keymap("n", "<leader>y", "<cmd>Telescope registers theme=ivy<cr>", opts)
 keymap("n", "<leader>[", "<cmd>Telescope diagnostics theme=ivy<cr>", opts)
 keymap(
-  "n",
-  "<leader>t",
-  "<cmd>lua require'telescope.builtin'.builtin(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-  opts
+	"n",
+	"<leader>t",
+	"<cmd>lua require'telescope.builtin'.builtin(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+	opts
 )
 -- keymap("n", "<leader>h", "<cmd>Telescope help_tags<cr>", opts)
 

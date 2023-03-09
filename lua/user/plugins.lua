@@ -20,7 +20,7 @@ end
 
 --- https://github.com/folke/lazy.nvim.git ---
 --------- Install your plugins here ----------
-plugins = {
+local plugins = {
 	-- core
 	"folke/lazy.nvim", -- Have packer manage itself
 	"nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
@@ -119,6 +119,6 @@ plugins = {
 	"ojroques/nvim-osc52",
 }
 
-opts = {}
+local opts = {}
 
 lazy.setup(plugins, opts)

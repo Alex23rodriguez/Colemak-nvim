@@ -18,3 +18,4 @@ lspconfig.tsserver.setup({})
 -- null-ls for diagnostics and formatting
 require("user.lsp.null-ls")
 require("user.lsp.config")
+require("user.lsp.lsp-keymaps")

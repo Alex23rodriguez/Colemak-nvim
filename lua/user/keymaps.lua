@@ -47,6 +47,19 @@ keymap("n", "<CR>", "i", opts)
 keymap("", "E", "5j", opts)
 keymap("", "U", "5k", opts)
 
+-- vim-indentwise
+-- these are the default mappings. They are here as a remeinder
+--[[ map [- <Plug>(IndentWisePreviousLesserIndent) ]]
+--[[ map [= <Plug>(IndentWisePreviousEqualIndent) ]]
+--[[ map [+ <Plug>(IndentWisePreviousGreaterIndent) ]]
+--[[ map ]- <Plug>(IndentWiseNextLesserIndent) ]]
+--[[ map ]= <Plug>(IndentWiseNextEqualIndent) ]]
+--[[ map ]+ <Plug>(IndentWiseNextGreaterIndent) ]]
+--[[ map [_ <Plug>(IndentWisePreviousAbsoluteIndent) ]]
+--[[ map ]_ <Plug>(IndentWiseNextAbsoluteIndent) ]]
+--[[ map [% <Plug>(IndentWiseBlockScopeBoundaryBegin) ]]
+--[[ map ]% <Plug>(IndentWiseBlockScopeBoundaryEnd) ]]
+
 -- ultra quick vertical movement
 --[[ keymap("n", "L", "<PageUp>zz", opts) ]]
 --[[ keymap("n", "Y", "<PageDown>zz", opts) ]]

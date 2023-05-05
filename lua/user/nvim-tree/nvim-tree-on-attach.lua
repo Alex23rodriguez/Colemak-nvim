@@ -14,6 +14,7 @@
 --
 -- Please see https://github.com/nvim-tree/nvim-tree.lua/wiki/Migrating-To-on_attach for assistance in migrating.
 --
+local function collaps_keep_buffer(bufnr) end
 
 local function on_attach(bufnr)
 	local api = require("nvim-tree.api")
@@ -150,6 +151,9 @@ local function on_attach(bufnr)
 	vim.keymap.set("n", "F", api.live_filter.clear, opts("Clean Filter"))
 	vim.keymap.set("n", "q", api.tree.close, opts("Close"))
 	vim.keymap.set("n", "W", api.tree.collapse_all, opts("Collapse"))
+	vim.keymap.set("n", "w", function()
+		return api.tree.collapse_all(true) -- keep open directories with active buffers
+	end, opts("Collapse"))
 	vim.keymap.set("n", "S", api.tree.search_node, opts("Search"))
 	vim.keymap.set("n", ".", api.node.run.cmd, opts("Run Command"))
 	vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))

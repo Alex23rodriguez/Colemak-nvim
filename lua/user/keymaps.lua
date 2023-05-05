@@ -203,7 +203,7 @@ keymap(
 	"<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
 	opts
 )
-keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>g", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", opts)
 keymap("n", "gr", "<cmd>Telescope lsp_references theme=ivy<cr>", opts)
 keymap("n", "<leader>'", "<cmd>Telescope marks theme=ivy<cr>", opts)
 keymap("n", "<leader>y", "<cmd>Telescope registers theme=ivy<cr>", opts)

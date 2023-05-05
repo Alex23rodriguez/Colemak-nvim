@@ -82,7 +82,7 @@ local plugins = {
 	"nvim-telescope/telescope.nvim",
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	"nvim-telescope/telescope-media-files.nvim",
-
+	"nvim-telescope/telescope-live-grep-args.nvim",
 	-- Colorschemes
 	"lunarvim/colorschemes",
 	"mangeshrex/everblush.vim",

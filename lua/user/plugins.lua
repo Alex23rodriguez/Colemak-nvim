@@ -30,7 +30,7 @@ local plugins = {
 	"windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
 	"numToStr/Comment.nvim", -- Easily comment stuff
 	"kyazdani42/nvim-web-devicons",
-	"kyazdani42/nvim-tree.lua",
+	{ "kyazdani42/nvim-tree.lua", lazy = false }, --file explorer
 	"akinsho/bufferline.nvim",
 	"moll/vim-bbye",
 	"nvim-lualine/lualine.nvim",

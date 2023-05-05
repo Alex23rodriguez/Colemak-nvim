@@ -14,6 +14,7 @@ lspconfig.lua_ls.setup({
 })
 lspconfig.pyright.setup({})
 lspconfig.tsserver.setup({})
+lspconfig.dockerls.setup({})
 
 -- null-ls for diagnostics and formatting
 require("user.lsp.null-ls")

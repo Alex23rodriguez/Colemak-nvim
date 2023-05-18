@@ -38,6 +38,7 @@ keymap("", "S", "z", opts)
 
 -- Normal --
 -- Colemak settings
+-- i is remaped only in normal mode to keep "inside"
 keymap("n", "i", "l", opts)
 
 -- remap enter to insert
@@ -62,8 +63,8 @@ keymap("", "U", "5k", opts)
 -- ultra quick vertical movement
 --[[ keymap("n", "L", "<PageUp>zz", opts) ]]
 --[[ keymap("n", "Y", "<PageDown>zz", opts) ]]
-keymap("n", "L", "25kzz", opts)
-keymap("n", "Y", "25jzz", opts)
+keymap("n", "L", "25k", opts)
+keymap("n", "Y", "25j", opts)
 
 -- Move current line ala vscode
 keymap("n", "<A-u>", ":m .-2<CR>==", opts) -- == indents line if necessary
@@ -75,7 +76,7 @@ keymap("i", "<A-e>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("x", "<A-e>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-u>", ":move '<-2<CR>gv-gv", opts)
 
--- better jump hist at Querty's n (back) and i (forward)
+-- better jump hist with alt at Colemak n and i
 keymap("n", "<A-n>", "<C-o>", opts)
 keymap("n", "<A-i>", "<C-i>", opts)
 
@@ -104,6 +105,7 @@ keymap("", "<C-i>", "<C-w>l", opts)
 keymap("", "<C-j>", "<C-w>l", opts) -- maybe necessary because of <tab> conflict
 
 -- Navigate buffers
+-- ":buffers" or ":ls" to get a list of buffers
 keymap("n", "l", "<cmd>BufferLinePick<CR>", opts) -- pick a buffer
 keymap("n", "ss", ":b#<CR>", opts) -- go back to previous file
 keymap("n", "si", "<cmd>BufferLineCycleNext<CR>", opts)
@@ -126,7 +128,7 @@ keymap("n", "<leader>0", "<cmd>lua require('harpoon.term').gotoTerminal(4)<CR>",
 -- manage buffers and windows
 keymap("n", "<c-w>", "<cmd>Bdelete<cr>", opts)
 keymap("n", "s", "<c-w>", opts) -- to access normal window commands
-keymap("n", "sS", "<c-w>x", opts) -- Swap current window with N window (default next)
+keymap("n", "sx", "<c-w>x", opts) -- Swap current window with N window (default next)
 
 keymap("n", "sh", "<c-w>s", opts) -- split horizontally
 
@@ -135,6 +137,7 @@ keymap("n", "sd", "<c-w>d", opts) -- redundant. split and go to def
 keymap("n", "sgt", "<c-w>gt", opts) -- redundant. go to next tab
 keymap("n", "sgT", "<c-w>gT", opts) -- redundant. go to prev tab
 keymap("n", "so", "<c-w>o", opts) -- redundant. close all but current window (zen mode lol)
+keymap("n", "sw", ":%bd|e#<CR>", opts) --  close all but current buffer
 keymap("n", "sz", "<c-w>z", opts) -- redundant. close preview window
 keymap("n", "sq", "<c-w>q", opts) -- redundant. quit current window (like :quit)
 

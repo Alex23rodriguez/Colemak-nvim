@@ -63,8 +63,8 @@ keymap("", "U", "5k", opts)
 -- ultra quick vertical movement
 --[[ keymap("n", "L", "<PageUp>zz", opts) ]]
 --[[ keymap("n", "Y", "<PageDown>zz", opts) ]]
-keymap("n", "L", "25k", opts)
-keymap("n", "Y", "25j", opts)
+keymap("", "L", "25k", opts)
+keymap("", "Y", "25j", opts)
 
 -- Move current line ala vscode
 keymap("n", "<A-u>", ":m .-2<CR>==", opts) -- == indents line if necessary

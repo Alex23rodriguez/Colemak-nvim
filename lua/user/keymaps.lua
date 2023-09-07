@@ -137,9 +137,15 @@ keymap("n", "sd", "<c-w>d", opts) -- redundant. split and go to def
 keymap("n", "sgt", "<c-w>gt", opts) -- redundant. go to next tab
 keymap("n", "sgT", "<c-w>gT", opts) -- redundant. go to prev tab
 keymap("n", "so", "<c-w>o", opts) -- redundant. close all but current window (zen mode lol)
-keymap("n", "sw", ":%bd|e#<CR>", opts) --  close all but current buffer
+keymap("n", "sW", ":%bd|e#<CR>", opts) --  close all but current buffer
+keymap("n", "sw", ":Bd<CR>", opts) -- close current buffer
 keymap("n", "sz", "<c-w>z", opts) -- redundant. close preview window
-keymap("n", "sq", "<c-w>q", opts) -- redundant. quit current window (like :quit)
+keymap("n", "sq", "<c-w>q", opts) -- reduntant. quit current window (like :quit)
+-- more window navigation (for when ctl is not available)
+keymap("n", "sN", "<C-w>h", opts) -- left
+keymap("n", "sE", "<C-w>j", opts) -- down
+keymap("n", "sU", "<C-w>k", opts) -- up
+keymap("n", "sI", "<C-w>l", opts) -- right
 
 keymap("n", "gA", "<cmd>Alpha<cr>", opts)
 

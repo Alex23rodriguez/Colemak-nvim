@@ -117,6 +117,22 @@ local plugins = {
 	-- SSH
 	-- plugin to copy across ssh
 	"ojroques/nvim-osc52",
+
+	-- rainbow_csv
+	{
+		"cameron-wags/rainbow_csv.nvim",
+		config = true,
+		ft = {
+			"csv",
+			"tsv",
+		},
+		cmd = {
+			"RainbowDelim",
+			"RainbowDelimSimple",
+			"RainbowDelimQuoted",
+			"RainbowMultiDelim",
+		},
+	},
 }
 
 local opts = {}

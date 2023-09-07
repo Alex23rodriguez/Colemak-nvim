@@ -100,5 +100,5 @@ telescope.setup({
 telescope.load_extension("harpoon")
 telescope.load_extension("media_files")
 -- telescope.load_extension("projects")
-telescope.load_extension("fzf")
+-- telescope.load_extension("fzf")
 telescope.load_extension("live_grep_args") -- https://github.com/nvim-telescope/telescope-live-grep-args.nvim

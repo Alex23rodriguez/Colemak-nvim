@@ -14,8 +14,6 @@
 --
 -- Please see https://github.com/nvim-tree/nvim-tree.lua/wiki/Migrating-To-on_attach for assistance in migrating.
 --
-local function collaps_keep_buffer(bufnr) end
-
 local function on_attach(bufnr)
 	local api = require("nvim-tree.api")
 

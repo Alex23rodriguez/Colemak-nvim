@@ -6,3 +6,8 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 		return true
 	end,
 })
+
+vim.lsp.start({
+	cmd = { "uiua", "lsp" },
+	root_dir = vim.fn.getcwd(), -- Use PWD as project root dir.
+})

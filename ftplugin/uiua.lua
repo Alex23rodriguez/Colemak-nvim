@@ -1,13 +1,8 @@
--- format on save
-vim.api.nvim_create_autocmd("BufWritePost", {
+-- -- format on save
+vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*.ua",
-	callback = function(ev)
-		vim.cmd("silent! !uiua fmt " .. ev.match)
+	callback = function()
+		vim.lsp.buf.format({ async = false })
 		return true
 	end,
-})
-
-vim.lsp.start({
-	cmd = { "uiua", "lsp" },
-	root_dir = vim.fn.getcwd(), -- Use PWD as project root dir.
 })

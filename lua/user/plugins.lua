@@ -55,7 +55,7 @@ local plugins = {
 
 	-- navigation
 	"ThePrimeagen/harpoon", --[[ https://github.com/ThePrimeagen/harpoon ]]
-	"goolord/alpha-nvim",
+	-- "goolord/alpha-nvim",
 	-- "ahmedkhalf/project.nvim",
 	"aserowy/tmux.nvim",
 
@@ -117,6 +117,27 @@ local plugins = {
 	-- SSH
 	-- plugin to copy across ssh
 	"ojroques/nvim-osc52",
+
+	-- rainbow csv plus RBQL
+	{
+		"cameron-wags/rainbow_csv.nvim",
+		config = true,
+		ft = {
+			"csv",
+			"tsv",
+			"csv_semicolon",
+			"csv_whitespace",
+			"csv_pipe",
+			"rfc_csv",
+			"rfc_semicolon",
+		},
+		cmd = {
+			"RainbowDelim",
+			"RainbowDelimSimple",
+			"RainbowDelimQuoted",
+			"RainbowMultiDelim",
+		},
+	},
 }
 
 local opts = {}

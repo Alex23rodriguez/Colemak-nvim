@@ -104,6 +104,11 @@ keymap("", "<C-u>", "<C-w>k", opts)
 keymap("", "<C-i>", "<C-w>l", opts)
 keymap("", "<C-j>", "<C-w>l", opts) -- maybe necessary because of <tab> conflict
 
+keymap("", "sN", "<C-w>h", opts)
+keymap("", "sE", "<C-w>j", opts)
+keymap("", "sU", "<C-w>k", opts)
+keymap("", "sI", "<C-w>l", opts)
+
 -- Navigate buffers
 -- ":buffers" or ":ls" to get a list of buffers
 keymap("n", "l", "<cmd>BufferLinePick<CR>", opts) -- pick a buffer

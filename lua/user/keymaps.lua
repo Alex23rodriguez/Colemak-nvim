@@ -179,16 +179,6 @@ keymap("v", ">", ">gv", opts)
 -- when pasting over something, don't override register
 keymap("v", "p", '"_dP', opts)
 
--- ToggleTerminal --
-keymap("n", "<C-x>t", "<cmd>lua _TERMINAL_TOGGLE()<cr>", opts)
-keymap("n", "<C-x>g", "<cmd>lua _LAZYGIT_TOGGLE()<cr>", opts)
-keymap("n", "<C-x>n", "<cmd>lua _NODE_TOGGLE()<cr>", opts)
-keymap("n", "<C-x>s", "<cmd>lua _NCDU_TOGGLE()<cr>", opts)
-keymap("n", "<C-x>h", "<cmd>lua _HTOP_TOGGLE()<cr>", opts)
-keymap("n", "<C-x>p", "<cmd>lua _PYTHON_TOGGLE()<cr>", opts)
-keymap("n", "<C-q>", "<cmd>lua _TOGGLE_CURRENT()<cr>", opts)
-keymap("t", "<C-q>", "<cmd>lua _TOGGLE_CURRENT()<cr>", opts)
-
 -- leader keymaps
 -- Format
 keymap("n", "<leader>F", ":Format<cr>", opts)

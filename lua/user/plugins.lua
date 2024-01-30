@@ -31,7 +31,6 @@ local plugins = {
 	"akinsho/bufferline.nvim",
 	"moll/vim-bbye",
 	"nvim-lualine/lualine.nvim",
-	"akinsho/toggleterm.nvim",
 	-- { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	"gennaro-tedesco/nvim-jqx",
 	"lewis6991/impatient.nvim",

@@ -186,31 +186,6 @@ keymap("n", "<leader>F", ":Format<cr>", opts)
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
--- Telescope commands
--- view more here: https://github.com/nvim-telescope/telescope.nvim
--- maybe useful: help_tags, treesitter, lsp_definitions, symbols
-keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>p", "<cmd>Telescope oldfiles<cr>", opts)
-keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
-keymap(
-	"n",
-	"/",
-	"<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	opts
-)
-keymap("n", "<leader>g", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", opts)
-keymap("n", "gr", "<cmd>Telescope lsp_references theme=ivy<cr>", opts)
-keymap("n", "<leader>'", "<cmd>Telescope marks theme=ivy<cr>", opts)
-keymap("n", "<leader>y", "<cmd>Telescope registers theme=ivy<cr>", opts)
-keymap("n", "<leader>[", "<cmd>Telescope diagnostics theme=ivy<cr>", opts)
-keymap(
-	"n",
-	"<leader>t",
-	"<cmd>lua require'telescope.builtin'.builtin(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	opts
-)
--- keymap("n", "<leader>h", "<cmd>Telescope help_tags<cr>", opts)
-
 -- Debugger
 -- dap
 keymap("n", "<leader>db", "<cmd>lua require('dap').toggle_breakpoint()<cr>", opts)

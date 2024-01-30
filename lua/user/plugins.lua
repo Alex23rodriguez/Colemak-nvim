@@ -138,6 +138,11 @@ local plugins = {
 			"RainbowMultiDelim",
 		},
 	},
+
+	-- all other plugins
+	{
+		import = "plugins",
+	},
 }
 
 local opts = {}

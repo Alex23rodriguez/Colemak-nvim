@@ -23,12 +23,9 @@ end
 local plugins = {
 	-- core
 	"folke/lazy.nvim", -- Have packer manage itself
-	"nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
-	"nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
 
 	-- misc
 	"windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
-	"numToStr/Comment.nvim", -- Easily comment stuff
 	"kyazdani42/nvim-web-devicons",
 	{ "kyazdani42/nvim-tree.lua", lazy = false }, --file explorer
 	"akinsho/bufferline.nvim",

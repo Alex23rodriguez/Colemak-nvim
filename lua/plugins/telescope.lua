@@ -117,7 +117,7 @@ return {
 				"?",
 				"<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
 			},
-			{ "<leader>g", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>" },
+			{ "<leader>r", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>" },
 			{ "gr", "<cmd>Telescope lsp_references theme=ivy<cr>" },
 			{ "<leader>'", "<cmd>Telescope marks theme=ivy<cr>" },
 			{ "<leader>y", "<cmd>Telescope registers theme=ivy<cr>" },

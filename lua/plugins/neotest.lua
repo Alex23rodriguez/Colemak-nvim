@@ -33,6 +33,7 @@ return {
 				desc = "Test file",
 			},
 			{
+				-- remember to install debugpy when testing in python!
 				"<leader>TD",
 				function()
 					vim.cmd.write()

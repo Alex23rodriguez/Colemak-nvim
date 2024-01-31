@@ -78,5 +78,28 @@ return {
 
 			-- useful commands: diffthis, next_hunk, prev_hunk
 		end,
+		keys = {
+			{
+				"<leader>gb",
+				function()
+					require("gitsigns").blame_line({ full = true })
+				end,
+				desc = "Git blame line",
+			},
+			{
+				"<leader>gh",
+				function()
+					require("gitsigns").preview_hunk()
+				end,
+				desc = "Git view hunk",
+			},
+			{
+				"<leader>gd",
+				function()
+					require("gitsigns").diffthis()
+				end,
+				desc = "Git diff",
+			},
+		},
 	},
 }

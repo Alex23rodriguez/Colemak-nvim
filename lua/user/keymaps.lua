@@ -181,7 +181,7 @@ keymap("v", "p", '"_dP', opts)
 
 -- leader keymaps
 -- Format
-keymap("n", "<leader>F", ":Format<cr>", opts)
+-- keymap("n", "<leader>F", ":Format<cr>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)

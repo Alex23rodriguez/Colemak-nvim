@@ -111,13 +111,14 @@ return {
 
 			-- view more here: https://github.com/nvim-telescope/telescope.nvim
 			{ "<leader>f", "<cmd>Telescope find_files<cr>" },
-			{ "<leader>p", "<cmd>Telescope oldfiles<cr>" },
+			{ "<leader>F", "<cmd>Telescope find_files hidden=true<cr>" },
+
+			{ "<leader>p", "<cmd>Telescope oldfiles only_cwd=true no_ignore=true<cr>" },
+
 			{ "<leader>b", "<cmd>Telescope buffers<cr>" },
-			{
-				"?",
-				"<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-			},
+			{ "<leader>?", "<cmd>Telescope current_buffer_fuzzy_find<cr>" },
 			{ "<leader>r", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>" },
+
 			{ "gr", "<cmd>Telescope lsp_references theme=ivy<cr>" },
 			{ "<leader>'", "<cmd>Telescope marks theme=ivy<cr>" },
 			{ "<leader>y", "<cmd>Telescope registers theme=ivy<cr>" },

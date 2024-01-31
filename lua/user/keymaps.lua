@@ -147,8 +147,6 @@ keymap("n", "sw", ":Bd<CR>", opts) --  close current buffer
 keymap("n", "sz", "<c-w>z", opts) -- redundant. close preview window
 keymap("n", "sq", "<c-w>q", opts) -- redundant. quit current window (like :quit)
 
-keymap("n", "gA", "<cmd>Alpha<cr>", opts)
-
 -- Normal --
 -- Colemak settings
 keymap("n", "i", "l", opts)

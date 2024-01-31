@@ -42,7 +42,6 @@ local plugins = {
 
 	-- navigation
 	"ThePrimeagen/harpoon", --[[ https://github.com/ThePrimeagen/harpoon ]]
-	-- "goolord/alpha-nvim",
 	-- "ahmedkhalf/project.nvim",
 	"aserowy/tmux.nvim",
 

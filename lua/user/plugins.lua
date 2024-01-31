@@ -90,11 +90,6 @@ local plugins = {
 	"nvim-treesitter/playground",
 	"JoosepAlviste/nvim-ts-context-commentstring",
 
-	-- Git
-	"lewis6991/gitsigns.nvim",
-	"sindrets/diffview.nvim",
-	"ruifm/gitlinker.nvim",
-
 	-- Web dev
 	"windwp/nvim-ts-autotag", --[[ autoclose tags in jsx and html https://github.com/windwp/nvim-ts-autotag ]]
 

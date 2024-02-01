@@ -22,7 +22,6 @@ null_ls.setup({
 				group = augroup,
 				buffer = bufnr,
 				callback = function()
-					-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
 					vim.lsp.buf.format({ bufnr = bufnr })
 				end,
 			})
@@ -30,5 +29,10 @@ null_ls.setup({
 	end,
 })
 
--- setup async Format command
-vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
+-- setup sync Format command
+vim.api.nvim_create_user_command("Format", function()
+	vim.lsp.buf.format({ async = false })
+	if vim.filetype.match({ buf = vim.api.nvim_get_current_buf() }) == "python" then
+		vim.cmd("!ruff --fix --select I %")
+	end
+end, { desc = "format the document and sort imports" })

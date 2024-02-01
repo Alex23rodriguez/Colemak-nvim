@@ -30,21 +30,21 @@ return {
 		local Terminal = require("toggleterm.terminal").Terminal
 
 		local curr_term_fn = nil
-		_TERMINAL_TOGGLE = function()
-			curr_term_fn = _TERMINAL_TOGGLE
-			vim.cmd("ToggleTerm")
-		end
-		curr_term_fn = _TERMINAL_TOGGLE
 
 		local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+		_LAZYGIT_TOGGLE = function()
+			curr_term_fn = _LAZYGIT_TOGGLE
+			lazygit:toggle()
+		end
+		curr_term_fn = _LAZYGIT_TOGGLE
 
 		_TOGGLE_CURRENT = function()
 			curr_term_fn()
 		end
 
-		_LAZYGIT_TOGGLE = function()
-			curr_term_fn = _LAZYGIT_TOGGLE
-			lazygit:toggle()
+		_TERMINAL_TOGGLE = function()
+			curr_term_fn = _TERMINAL_TOGGLE
+			vim.cmd("ToggleTerm")
 		end
 
 		local node = Terminal:new({ cmd = "node", hidden = true })

@@ -118,14 +118,60 @@ return {
 			{ "<leader>b", "<cmd>Telescope buffers<cr>" },
 			{ "<leader>?", "<cmd>Telescope current_buffer_fuzzy_find<cr>" },
 			{ "<leader>r", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>" },
-
-			{ "gr", "<cmd>Telescope lsp_references theme=ivy<cr>" },
 			{ "<leader>'", "<cmd>Telescope marks theme=ivy<cr>" },
 			{ "<leader>y", "<cmd>Telescope registers theme=ivy<cr>" },
 			{ "<leader>[", "<cmd>Telescope diagnostics theme=ivy<cr>" },
 			{
 				"<leader>t",
 				"<cmd>lua require'telescope.builtin'.builtin(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+			},
+
+			-- lsp
+			{ "gr", "<cmd>Telescope lsp_references<cr>" },
+			{
+				"<leader>lr",
+				"<cmd>Telescope lsp_references<cr>",
+				desc = "references",
+			},
+			{
+				"<leader>ld",
+				"<cmd>Telescope lsp_definitions<cr>",
+				desc = "definitions",
+			},
+			{
+				"<leader>lo",
+				"<cmd>Telescope lsp_outgoing_calls<cr>",
+				desc = "outgoing calls",
+			},
+			{
+				"<leader>ly",
+				"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+				desc = "dynamic workspace symbols",
+			},
+			{
+				"<leader>lw",
+				"<cmd>Telescope lsp_workspace_symbols<cr>",
+				desc = "workspace symbols",
+			},
+			{
+				"<leader>ls",
+				"<cmd>Telescope lsp_document_symbols<cr>",
+				desc = "document symbols",
+			},
+			{
+				"<leader>li",
+				"<cmd>Telescope lsp_implementations<cr>",
+				desc = "implementations",
+			},
+			{
+				"<leader>lt",
+				"<cmd>Telescope lsp_type_definitions<cr>",
+				desc = "type definitions",
+			},
+			{
+				"<leader>ln",
+				"<cmd>Telescope lsp_incoming_calls<cr>",
+				desc = "incoming calls",
 			},
 		},
 	},

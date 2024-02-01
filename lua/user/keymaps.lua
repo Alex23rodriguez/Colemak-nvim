@@ -26,13 +26,14 @@ vim.g.maplocalleader = " "
 keymap("", "u", "k", opts)
 keymap("", "n", "h", opts)
 keymap("", "e", "j", opts)
+
+-- keymap("", "U", "25k", opts)
+-- keymap("", "E", "25j", opts)
+
 -- keymap("", "i", "l", opts) -- this one only for normal and visual modes
 keymap("", "j", "e", opts)
 keymap("", "k", "n", opts)
 keymap("", "K", "N", opts)
-
-keymap("", "E", "5j", opts)
-keymap("", "U", "5k", opts)
 
 keymap("", "S", "z", opts)
 
@@ -45,8 +46,10 @@ keymap("n", "i", "l", opts)
 keymap("n", "<CR>", "i", opts)
 
 -- turbomove
-keymap("", "E", "5j", opts)
-keymap("", "U", "5k", opts)
+-- keymap("", "E", "5j", opts)
+-- keymap("", "U", "5k", opts)
+-- keymap("", "L", "25k", opts)
+-- keymap("", "Y", "25j", opts)
 
 -- vim-indentwise
 -- these are the default mappings. They are here as a remeinder
@@ -63,8 +66,6 @@ keymap("", "U", "5k", opts)
 -- ultra quick vertical movement
 --[[ keymap("n", "L", "<PageUp>zz", opts) ]]
 --[[ keymap("n", "Y", "<PageDown>zz", opts) ]]
-keymap("", "L", "25k", opts)
-keymap("", "Y", "25j", opts)
 
 -- Move current line ala vscode
 keymap("n", "<A-u>", ":m .-2<CR>==", opts) -- == indents line if necessary
@@ -155,7 +156,7 @@ keymap("n", "i", "l", opts)
 keymap("n", "<CR>", "i", opts)
 
 -- misc
-keymap("n", "gs", "<cmd>source %<cr><cmd>echo 'file sourced!'<cr>", opts)
+-- keymap("n", "gs", "<cmd>source %<cr><cmd>echo 'file sourced!'<cr>", opts)
 
 -- Resize with arrows
 -- keymap("n", "<C-Up>", ":resize +2<CR>", opts)

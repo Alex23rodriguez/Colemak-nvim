@@ -8,25 +8,23 @@ return {
 			require("Comment").setup({
 				-- options: https://github.com/numToStr/Comment.nvim#configuration-optional
 				-- :h comment.config
-				mappings = false,
+				mappings = { basic = true, extra = false },
 			})
 		end,
 		lazy = false,
 		keys = {
 			{
 				"<leader>/",
-				function()
-					require("Comment.api").toggle.linewise()
-				end,
-				mode = "n",
+				"gc",
+				mode = "v",
+				remap = true,
 				desc = "Toggle comment",
 			},
 			{
 				"<leader>/",
-				function()
-					require("Comment.api").toggle.linewise(vim.fn.visualmode())
-				end,
-				mode = "v",
+				"gcc",
+				mode = "n",
+				remap = true,
 				desc = "Toggle comment",
 			},
 		},

@@ -6,6 +6,7 @@ return {
 		"nvim-treesitter/playground",
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		"nvim-treesitter/nvim-treesitter-textobjects",
+		"nvim-treesitter/nvim-treesitter-context",
 	},
 
 	config = function()
@@ -53,9 +54,6 @@ return {
 				},
 				disable = { "html", "tsx" },
 			},
-			playground = {
-				enable = true,
-			},
 			incremental_selection = {
 				enable = true,
 				keymaps = {
@@ -63,50 +61,6 @@ return {
 					node_incremental = "<c-space>",
 					scope_incremental = "<Tab>",
 					node_decremental = "<bs>",
-				},
-			},
-			textsubjects = {
-				enable = false,
-				-- prev_selection = ",", -- (Optional) keymap to select the previous selection
-				keymaps = {
-					["<cr>"] = "textsubjects-smart",
-					["<bs>"] = "textsubjects-container-outer",
-					["<tab>"] = {
-						"textsubjects-container-inner",
-						desc = "Select inside containers (classes, functions, etc.)",
-					},
-				},
-			},
-			textobjects = {
-				select = {
-					enable = true,
-					lookahead = true,
-					keymaps = {
-						["la"] = "@assignment.lhs",
-						["ra"] = "@assignment.rhs",
-						["ia"] = "@assignment.inner",
-						["aa"] = "@assignment.outer",
-						["il"] = "@loop.inner",
-						["ol"] = "@loop.outer",
-						["ii"] = "@conditional.inner",
-						["oi"] = "@conditional.outer",
-
-						-- ["af"] = "@function.outer",
-						-- ["if"] = "@function.inner",
-						-- ["ac"] = "@class.outer",
-						-- ["ic"] = "@class.inner",
-					},
-				},
-				swap = {
-					enable = true,
-					swap_next = {
-						["<leader>si"] = "@parameter.inner",
-						["<leader>sy"] = "@function.outer",
-					},
-					swap_previous = {
-						["<leader>sn"] = "@parameter.inner",
-						["<leader>sl"] = "@function.outer",
-					},
 				},
 			},
 		})

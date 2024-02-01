@@ -124,6 +124,9 @@ local plugins = {
 	{
 		import = "plugins",
 	},
+	{
+		import = "plugins/folke",
+	},
 }
 
 local opts = {}

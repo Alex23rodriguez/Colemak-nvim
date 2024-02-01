@@ -119,7 +119,7 @@ return {
 
 			{ "<leader>b", "<cmd>Telescope buffers<cr>" },
 			{ "<leader>?", "<cmd>Telescope current_buffer_fuzzy_find<cr>" },
-			{ "<leader>r", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>" },
+			{ "<leader>g", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>" },
 			{ "<leader>'", "<cmd>Telescope marks theme=ivy<cr>" },
 			-- { "<leader>y", "<cmd>Telescope registers theme=ivy<cr>" },
 			{ "<leader>y", "<cmd>Telescope yank_history<cr>" },

@@ -81,21 +81,21 @@ return {
 		end,
 		keys = {
 			{
-				"<leader>gb",
+				"<leader>Gb",
 				function()
 					require("gitsigns").blame_line({ full = true })
 				end,
 				desc = "Git blame line",
 			},
 			{
-				"<leader>gh",
+				"<leader>Gh",
 				function()
 					require("gitsigns").preview_hunk()
 				end,
 				desc = "Git view hunk",
 			},
 			{
-				"<leader>gd",
+				"<leader>Gd",
 				function()
 					require("gitsigns").diffthis()
 				end,

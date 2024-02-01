@@ -41,6 +41,9 @@ keymap("", "S", "z", opts)
 keymap("n", "L", "<C-o>", opts)
 keymap("n", "Y", "<C-i>", opts)
 
+-- center screen
+keymap("n", "<c-m>", "zz", opts)
+
 -- Normal --
 -- Colemak settings
 -- i is remaped only in normal mode to keep "inside"
@@ -170,7 +173,7 @@ keymap("n", "[q", ":cprev<CR>", opts)
 -- keymap("n", "<C-q>", ":call QuickFixToggle<CR>", opts)
 
 -- Visual --
-keymap("v", "i", "l", opts)
+-- keymap("v", "i", "l", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)

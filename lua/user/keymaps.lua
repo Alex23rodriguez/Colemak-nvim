@@ -120,7 +120,7 @@ keymap("n", "sy", "<cmd>BufferLineMoveNext<CR>", opts)
 
 -- Harpoon navigation
 keymap("n", "<leader>m", "<cmd>lua require('harpoon.mark').add_file()<CR>", opts)
-keymap("n", "<leader>a", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
+keymap("n", "<leader>h", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
 keymap("n", "<leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", opts)
 keymap("n", "<leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", opts)
 keymap("n", "<leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", opts)

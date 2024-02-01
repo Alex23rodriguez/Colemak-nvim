@@ -105,6 +105,7 @@ return {
 			-- telescope.load_extension("projects")
 			telescope.load_extension("fzf")
 			telescope.load_extension("live_grep_args") -- https://github.com/nvim-telescope/telescope-live-grep-args.nvim
+			telescope.load_extension("aerial")
 		end,
 
 		keys = {

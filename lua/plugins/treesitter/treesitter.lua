@@ -86,11 +86,26 @@ return {
 						["ra"] = "@assignment.rhs",
 						["ia"] = "@assignment.inner",
 						["aa"] = "@assignment.outer",
+						["il"] = "@loop.inner",
+						["ol"] = "@loop.outer",
+						["ii"] = "@conditional.inner",
+						["oi"] = "@conditional.outer",
 
 						-- ["af"] = "@function.outer",
 						-- ["if"] = "@function.inner",
 						-- ["ac"] = "@class.outer",
 						-- ["ic"] = "@class.inner",
+					},
+				},
+				swap = {
+					enable = true,
+					swap_next = {
+						["<leader>si"] = "@parameter.inner",
+						["<leader>sy"] = "@function.outer",
+					},
+					swap_previous = {
+						["<leader>sn"] = "@parameter.inner",
+						["<leader>sl"] = "@function.outer",
 					},
 				},
 			},

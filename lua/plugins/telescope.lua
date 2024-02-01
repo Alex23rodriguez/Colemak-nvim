@@ -106,6 +106,7 @@ return {
 			telescope.load_extension("fzf")
 			telescope.load_extension("live_grep_args") -- https://github.com/nvim-telescope/telescope-live-grep-args.nvim
 			telescope.load_extension("aerial")
+			telescope.load_extension("yank_history")
 		end,
 
 		keys = {
@@ -120,7 +121,8 @@ return {
 			{ "<leader>?", "<cmd>Telescope current_buffer_fuzzy_find<cr>" },
 			{ "<leader>r", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>" },
 			{ "<leader>'", "<cmd>Telescope marks theme=ivy<cr>" },
-			{ "<leader>y", "<cmd>Telescope registers theme=ivy<cr>" },
+			-- { "<leader>y", "<cmd>Telescope registers theme=ivy<cr>" },
+			{ "<leader>y", "<cmd>Telescope yank_history<cr>" },
 			{ "<leader>[", "<cmd>Telescope diagnostics theme=ivy<cr>" },
 			{
 				"<leader>t",

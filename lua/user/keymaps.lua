@@ -180,6 +180,7 @@ keymap("v", "p", '"_dP', opts)
 -- leader keymaps
 -- Format
 -- keymap("n", "<leader>F", ":Format<cr>", opts)
+keymap("n", "<leader>i", ":!ruff --fix --select I %<cr>", { desc = "sort imports alphabetically", unpack(opts) })
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)

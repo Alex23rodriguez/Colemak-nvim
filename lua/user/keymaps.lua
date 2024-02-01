@@ -37,6 +37,10 @@ keymap("", "K", "N", opts)
 
 keymap("", "S", "z", opts)
 
+-- better jump hist with alt at Colemak n and i
+keymap("n", "L", "<C-o>", opts)
+keymap("n", "Y", "<C-i>", opts)
+
 -- Normal --
 -- Colemak settings
 -- i is remaped only in normal mode to keep "inside"
@@ -76,10 +80,6 @@ keymap("i", "<A-e>", "<Esc>:m .+1<CR>==gi", opts)
 -- Visual Block --
 keymap("x", "<A-e>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-u>", ":move '<-2<CR>gv-gv", opts)
-
--- better jump hist with alt at Colemak n and i
-keymap("n", "<A-n>", "<C-o>", opts)
-keymap("n", "<A-i>", "<C-i>", opts)
 
 -- Accents (choose one of the two)
 -- keymap("i", "<C-o>", "<C-k>", opts) -- use now free <C-o> for diagraphs (<C-k> is used by tmux)

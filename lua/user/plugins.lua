@@ -75,10 +75,7 @@ local plugins = {
 	"folke/tokyonight.nvim",
 
 	-- Treesitter
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-	"p00f/nvim-ts-rainbow",
-	"nvim-treesitter/playground",
-	"JoosepAlviste/nvim-ts-context-commentstring",
+	{ import = "plugins/treesitter" },
 
 	-- Web dev
 	"windwp/nvim-ts-autotag", --[[ autoclose tags in jsx and html https://github.com/windwp/nvim-ts-autotag ]]

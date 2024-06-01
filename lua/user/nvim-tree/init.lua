@@ -1,6 +1,10 @@
 -- setup with all defaults
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 -- nested options are documented by accessing them with `.` (eg: `:help nvim-tree.view.mappings.list`).
+local status_ok, _ = pcall(require, "nvim-tree")
+if not status_ok then
+	return
+end
 local on_attach = require("user.nvim-tree.nvim-tree-on-attach")
 require("nvim-tree").setup({
 	-- BEGIN_DEFAULT_OPTS

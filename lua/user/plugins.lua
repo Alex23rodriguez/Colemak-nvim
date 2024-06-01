@@ -27,7 +27,7 @@ local plugins = {
 	-- misc
 	"windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
 	"kyazdani42/nvim-web-devicons",
-	{ "kyazdani42/nvim-tree.lua", lazy = false }, --file explorer
+	-- { "kyazdani42/nvim-tree.lua", lazy = false }, --file explorer
 	"akinsho/bufferline.nvim",
 	"moll/vim-bbye",
 	"nvim-lualine/lualine.nvim",

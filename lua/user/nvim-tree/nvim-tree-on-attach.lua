@@ -14,6 +14,11 @@
 --
 -- Please see https://github.com/nvim-tree/nvim-tree.lua/wiki/Migrating-To-on_attach for assistance in migrating.
 --
+local status_ok, api = pcall(require, "nvim-tree.api")
+if not status_ok then
+	return
+end
+
 local function on_attach(bufnr)
 	local api = require("nvim-tree.api")
 

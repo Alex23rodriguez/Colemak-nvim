@@ -20,10 +20,12 @@ return {
 							["ii"] = "@conditional.inner",
 							["oi"] = "@conditional.outer",
 
-							-- ["af"] = "@function.outer",
-							-- ["if"] = "@function.inner",
-							-- ["ac"] = "@class.outer",
-							-- ["ic"] = "@class.inner",
+							["af"] = "@function.outer",
+							["if"] = "@function.inner",
+							["ac"] = "@class.outer",
+							["ic"] = "@class.inner",
+							["ap"] = "@parameter.outer",
+							["ip"] = "@parameter.inner",
 						},
 					},
 					swap = {

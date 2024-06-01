@@ -2,7 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	dependencies = {
-		"p00f/nvim-ts-rainbow",
+		-- "p00f/nvim-ts-rainbow",
 		"nvim-treesitter/playground",
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		"nvim-treesitter/nvim-treesitter-textobjects",
@@ -38,22 +38,22 @@ return {
 			},
 
 			indent = { enable = true, disable = { "yaml" } },
-			context_commentstring = {
-				enable = true,
-				enable_autocmd = false,
-			},
-			rainbow = {
-				enable = true,
-				colors = {
-					"DeepSkyBlue",
-					"Orchid",
-					"DodgerBlue",
-					-- "Cornsilk",
-					-- "Salmon",
-					-- "LawnGreen",
-				},
-				disable = { "html", "tsx" },
-			},
+			-- context_commentstring = {
+			-- enable = true,
+			-- enable_autocmd = false,
+			-- },
+			-- rainbow = {
+			-- 	enable = true,
+			-- 	colors = {
+			-- 		"DeepSkyBlue",
+			-- 		"Orchid",
+			-- 		"DodgerBlue",
+			-- 		-- "Cornsilk",
+			-- 		-- "Salmon",
+			-- 		-- "LawnGreen",
+			-- 	},
+			-- 	disable = { "html", "tsx" },
+			-- },
 			incremental_selection = {
 				enable = true,
 				keymaps = {

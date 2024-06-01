@@ -4,7 +4,6 @@ return {
 	-- Optional dependencies
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
-		"nvim-tree/nvim-web-devicons",
 	},
 	opts = {
 		filter_kind = false,

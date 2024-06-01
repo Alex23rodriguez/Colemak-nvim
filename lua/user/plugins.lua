@@ -26,7 +26,6 @@ local plugins = {
 
 	-- misc
 	"windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
-	"kyazdani42/nvim-web-devicons",
 	-- { "kyazdani42/nvim-tree.lua", lazy = false }, --file explorer
 	"akinsho/bufferline.nvim",
 	"moll/vim-bbye",
@@ -88,7 +87,7 @@ local plugins = {
 
 	-- Debugging
 	"mfussenegger/nvim-dap",
-	"rcarriga/nvim-dap-ui",
+	{ "rcarriga/nvim-dap-ui", dependencies = "nvim-neotest/nvim-nio" },
 	"theHamsta/nvim-dap-virtual-text",
 	"mfussenegger/nvim-dap-python",
 

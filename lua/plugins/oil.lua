@@ -26,27 +26,32 @@ return {
 			end,
 			["gn"] = function()
 				require("oil").set_columns({ "icon" })
+				require("oil").set_sort({ { "type", "asc" } })
 			end,
 			["gs"] = function()
 				require("oil").set_columns({ { "size", highlight = "@keyword" }, "icon" })
+				require("oil").set_sort({ { "type", "asc" }, { "size", "desc" } })
 			end,
 			["gm"] = function()
 				require("oil").set_columns({
 					{ "mtime", format = "mod: %Y-%m-%d %H:%M", highlight = "@function" },
 					"icon",
 				})
+				require("oil").set_sort({ { "type", "asc" }, { "mtime", "desc" } })
 			end,
 			["gc"] = function()
 				require("oil").set_columns({
 					{ "ctime", format = "created: %Y-%m-%d %H:%M", highlight = "@function" },
 					"icon",
 				})
+				require("oil").set_sort({ { "type", "asc" }, { "ctime", "desc" } })
 			end,
 			["ga"] = function()
 				require("oil").set_columns({
 					{ "atime", format = "accessed: %Y-%m-%d %H:%M", highlight = "@function" },
 					"icon",
 				})
+				require("oil").set_sort({ { "type", "asc" }, { "atime", "desc" } })
 			end,
 		},
 		view_options = { show_hidden = true },
